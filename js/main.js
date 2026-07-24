@@ -172,10 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Showcase Logic (Carousel & Modal)
     // ==========================================
     const navShowcaseLink = document.getElementById('nav-showcase-link');
-    const showcaseModal = document.getElementById('showcase-modal');
-    const showcaseCloseBtn = document.querySelector('.showcase-close-btn');
+    const formatDetailModal = document.getElementById('format-detail-modal');
+    const detailCloseBtn = document.querySelector('.detail-close-btn');
     const coverflowItems = document.querySelectorAll('.coverflow-item');
     const showcaseActiveTitle = document.getElementById('showcase-active-title');
+    const showcaseActiveDesc = document.getElementById('showcase-active-desc');
     const btnReserveFormat = document.getElementById('btn-reserve-format');
     const coverflowPrevBtn = document.querySelector('.coverflow-prev');
     const coverflowNextBtn = document.querySelector('.coverflow-next');
@@ -200,10 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (offset === 0) {
                 item.classList.add('active');
-                const title = item.getAttribute('data-title');
-                const format = item.getAttribute('data-format');
-                if (showcaseActiveTitle) showcaseActiveTitle.textContent = title;
-                if (btnReserveFormat) btnReserveFormat.setAttribute('data-format', format);
             } else if (offset === -1) {
                 item.classList.add('prev-1');
             } else if (offset === 1) {
@@ -226,6 +223,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (index !== currentCoverflowIndex) {
                     currentCoverflowIndex = index;
                     updateCoverflow();
+                } else {
+                    // Si ya está activo y se le hace clic, abrir modal de detalles
+                    const title = item.getAttribute('data-title');
+                    const desc = item.getAttribute('data-desc');
+                    const format = item.getAttribute('data-format');
+                    
+                    if (showcaseActiveTitle) showcaseActiveTitle.textContent = title;
+                    if (showcaseActiveDesc) showcaseActiveDesc.textContent = desc;
+                    if (btnReserveFormat) btnReserveFormat.setAttribute('data-format', format);
+                    
+                    if (formatDetailModal) formatDetailModal.classList.add('show');
                 }
             });
         });
@@ -275,24 +283,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Modal Triggers
-    if (navShowcaseLink && showcaseModal) {
-        navShowcaseLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            showcaseModal.classList.add('show');
-            currentCoverflowIndex = 0; // Reset to 0
-            updateCoverflow();
-        });
-    }
-    
-    if (showcaseCloseBtn && showcaseModal) {
-        showcaseCloseBtn.addEventListener('click', () => {
-            showcaseModal.classList.remove('show');
+    if (detailCloseBtn && formatDetailModal) {
+        detailCloseBtn.addEventListener('click', () => {
+            formatDetailModal.classList.remove('show');
         });
     }
     
     window.addEventListener('click', (e) => {
-        if (e.target === showcaseModal) {
-            showcaseModal.classList.remove('show');
+        if (e.target === formatDetailModal) {
+            formatDetailModal.classList.remove('show');
         }
     });
 
@@ -301,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnReserveFormat.addEventListener('click', () => {
             const formatValue = btnReserveFormat.getAttribute('data-format');
             
-            if (showcaseModal) showcaseModal.classList.remove('show');
+            if (formatDetailModal) formatDetailModal.classList.remove('show');
             if (contactModal) contactModal.classList.add('show');
             
             const optionToSelect = Array.from(customOptions).find(opt => opt.getAttribute('data-value') === formatValue);
@@ -480,7 +479,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Independiente del tamaño del contenido, solo basado en los píxeles scrolleados
             if (heroIsoContainer) {
                 const parallaxY = currentScroll * 0.3; // Desciende 0.3px por cada pixel de scroll
-                heroIsoContainer.style.transform = `translate(-50%, calc(-50% + ${parallaxY}px))`;
+                // Solo trasladamos en Y basado en el parallax, ya que en CSS ahora está bottom:0
+                heroIsoContainer.style.transform = `translate(-50%, ${parallaxY}px)`;
             }
 
             requestAnimationFrame(render3DIso);

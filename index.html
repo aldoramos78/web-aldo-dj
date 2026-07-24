@@ -40,8 +40,8 @@
                 <ul class="nav-list">
                     <li><a href="#hero" class="nav-link">Inicio</a></li>
                     <li><a href="#about" class="nav-link">Sobre Mí</a></li>
-                    <li><a href="#" id="nav-showcase-link" class="nav-link">Showcase</a></li>
                     <li><a href="#sets" class="nav-link">Sets & Galería</a></li>
+                    <li><a href="#showcase" class="nav-link">Showcase</a></li>
                     <li><a href="#contact" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -148,6 +148,39 @@
                 </div>
             </div>
         </section>
+
+        <!-- SHOWCASE SECTION -->
+        <section id="showcase" class="showcase-section">
+            <div class="container">
+                <h2 class="section-title">Showcase</h2>
+                
+                <div class="coverflow-wrapper">
+                    <button class="coverflow-arrow coverflow-prev" aria-label="Anterior">&lt;</button>
+                    <div class="coverflow-container">
+                        <!-- Coverflow items dynamically positioned via JS -->
+                        <div class="coverflow-item" data-title="Aldo Deejay" data-format="club" data-desc="La mejor selección de rompepistas internacionales y los temazos de siempre. Energía pura para mantener la pista llena de principio a fin.">
+                            <img src="./imagenes/Dj.Hits.png" alt="Aldo Deejay" draggable="false">
+                        </div>
+                        <div class="coverflow-item" data-title="Dance Fever" data-format="club" data-desc="Voz en vivo y energía arroladora con los temas Disco-Dance imprescindibles. Ritmo, interacción y alegría contagiosa para una noche perfecta.">
+                            <img src="./imagenes/Dance.Fever.png" alt="Dance Fever" draggable="false">
+                        </div>
+                        <div class="coverflow-item" data-title="Poolside Sessions" data-format="hotel" data-desc="Sonidos lounge, organic house y beats relajados. La banda sonora perfecta para terrazas, piscineo y sunsets inolvidables.">
+                            <img src="./imagenes/Dj.Chill.png" alt="Poolside Sessions" draggable="false">
+                        </div>
+                        <div class="coverflow-item" data-title="Flamenco Grooves" data-format="private" data-desc="Ritmos ElectroFlamencos entrelazados con el arte, la elegancia y el zapateado de una bailarina flamenca. Sonido potente con raíces.">
+                            <img src="./imagenes/Flamenco.Grooves.png" alt="Flamenco Grooves" draggable="false">
+                        </div>
+                        <div class="coverflow-item" data-title="Deep Blue Sea" data-format="club" data-desc="Acordes de violín eléctrico flotando sobre bases Deep & House. El toque sofisticado ideal para eventos premium y atardeceres exclusivos.">
+                            <img src="./imagenes/Deep.Blue.Sea.png" alt="Deep Blue Sea" draggable="false">
+                        </div>
+                        <div class="coverflow-item" data-title="Octopus Party" data-format="club" data-desc="Una espectacular cabina hinchable de 8×3m, performance en vivo y candy girls. Un show exclusivo diseñado para dejar huella. (Exclusivo en toda Canarias)">
+                            <img src="./imagenes/Dj.Octopus.png" alt="Octopus Party" draggable="false">
+                        </div>
+                    </div>
+                    <button class="coverflow-arrow coverflow-next" aria-label="Siguiente">&gt;</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- CONTACT MODAL -->
@@ -200,37 +233,13 @@
         </div>
     </div>
 
-    <!-- COVERFLOW SHOWCASE MODAL -->
-    <div id="showcase-modal" class="modal showcase-fullscreen">
-        <span class="close-btn showcase-close-btn">&times;</span>
-        
-        <div class="coverflow-wrapper">
-            <button class="coverflow-arrow coverflow-prev" aria-label="Anterior">&lt;</button>
-            <div class="coverflow-container">
-                <!-- Coverflow items dynamically positioned via JS -->
-                <div class="coverflow-item" data-title="ALL TIME HITS / DJ HITS" data-format="hotel">
-                    <img src="./imagenes/Dj.Hits.png" alt="DJ Hits" draggable="false">
-                </div>
-                <div class="coverflow-item" data-title="DANCE FEVER" data-format="club">
-                    <img src="./imagenes/Dance.Fever.png" alt="Dance Fever" draggable="false">
-                </div>
-                <div class="coverflow-item" data-title="POOLSIDE SESSIONS / CHILL" data-format="hotel">
-                    <img src="./imagenes/Dj.Chill.png" alt="DJ Chill" draggable="false">
-                </div>
-                <div class="coverflow-item" data-title="FLAMENCO GROOVES" data-format="private">
-                    <img src="./imagenes/Flamenco.Grooves.png" alt="Flamenco Grooves" draggable="false">
-                </div>
-                <div class="coverflow-item" data-title="DEEP BLUE SEA" data-format="club">
-                    <img src="./imagenes/Deep.Blue.Sea.png" alt="Deep Blue Sea" draggable="false">
-                </div>
-            </div>
-            <button class="coverflow-arrow coverflow-next" aria-label="Siguiente">&gt;</button>
-        </div>
-
-        <div class="showcase-info-layer">
-            <h2 id="showcase-active-title" class="showcase-title">FORMAT TITLE</h2>
-            <p class="showcase-subtitle">Una experiencia musical diseñada a medida para elevar tu evento a otro nivel.</p>
-            <button id="btn-reserve-format" class="btn btn-primary" data-format="">RESERVAR ESTE FORMATO</button>
+    <!-- FORMAT DETAIL MODAL -->
+    <div id="format-detail-modal" class="modal">
+        <div class="modal-content text-center">
+            <span class="close-btn detail-close-btn">&times;</span>
+            <h2 id="showcase-active-title" class="modal-title format-modal-title">Título del Formato</h2>
+            <p id="showcase-active-desc" class="showcase-subtitle">Descripción del formato.</p>
+            <button id="btn-reserve-format" class="btn btn-primary" style="display: block; margin: 1.5rem auto 0;" data-format="">RESERVAR ESTE FORMATO</button>
         </div>
     </div>
 
