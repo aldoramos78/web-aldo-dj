@@ -61,6 +61,15 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    scroll-margin-top: 100px; /* Evita que el header fijo tape el inicio de la sección al hacer scroll desde el menú */
+}
+
 /* ==========================================================================
    Buttons
    ========================================================================== */
