@@ -61,10 +61,6 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 section {
     scroll-margin-top: 100px; /* Evita que el header fijo tape el inicio de la sección al hacer scroll desde el menú */
@@ -211,7 +207,7 @@ section {
 
 .hero-content {
     position: absolute;
-    bottom: 18%; /* Subido para cuadrar dentro de la parte baja de la A */
+    bottom: 5vh; /* Bajado casi al borde inferior (parte baja de la A) */
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -299,7 +295,12 @@ section {
     }
     
     .hero-content {
-        bottom: 12%; /* Bajamos un poco el texto en móvil para que encaje mejor */
+        bottom: 15px; /* Más abajo para que no tape la mesa ni las manos */
+    }
+    
+    .hero-content .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -998,23 +999,6 @@ section {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-    .coverflow-item {
-        width: 220px;
-    }
-    .coverflow-item.prev-1 {
-        transform: translateX(-40%) translateZ(-150px) rotateY(30deg);
-    }
-    .coverflow-item.next-1 {
-        transform: translateX(40%) translateZ(-150px) rotateY(-30deg);
-    }
-    .showcase-title {
-        font-size: 1.4rem;
-    }
-    .coverflow-prev { left: 5%; }
-    .coverflow-next { right: 5%; }
-}
-
 .coverflow-arrow {
     position: absolute;
     top: 50%;
@@ -1049,6 +1033,28 @@ section {
     right: 10%;
 }
 
+@media (max-width: 768px) {
+    .coverflow-item {
+        width: 200px;
+    }
+    .coverflow-item.prev-1 {
+        --base-transform: translateX(-45%) translateZ(-150px) rotateY(30deg);
+    }
+    .coverflow-item.next-1 {
+        --base-transform: translateX(45%) translateZ(-150px) rotateY(-30deg);
+    }
+    .showcase-title {
+        font-size: 1.4rem;
+    }
+    .coverflow-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .coverflow-prev { left: 0; }
+    .coverflow-next { right: 0; }
+}
+
 
 
 /* ==========================================================================
@@ -1080,7 +1086,7 @@ section {
 }
 
 .liquid-reveal.visible {
-    animation: liquidWaveReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: liquidWaveReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 @keyframes liquidWaveReveal {
