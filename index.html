@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALDO DEEJAY | Official Website</title>
+    <meta name="description" content="Sitio web oficial de ALDO DEEJAY. Explora los últimos sets, galería y próximos eventos.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./imagenes/Iso.DJ.png">
+    
+    <!-- Google Fonts: Outfit for a modern, sleek look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Partículas Interactivas (Fondo) -->
+    <canvas id="particles-bg"></canvas>
+
+    <!-- Filtro SVG para Transición "Onda Líquida" -->
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="liquid-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- HEADER -->
+    <header id="main-header" class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#"><img src="./imagenes/Logo.DJ.png" alt="Aldo Deejay Logo" class="brand-logo"></a>
+            </div>
+            <nav class="main-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Inicio</a></li>
+                    <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#" id="nav-showcase-link" class="nav-link">Showcase</a></li>
+                    <li><a href="#sets" class="nav-link">Sets & Galería</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            
+            <!-- Logo Iso de fondo (animado y con transparencia) -->
+            <div class="hero-bg-iso" id="hero-iso-container">
+                <div class="iso-3d-wrapper">
+                    <img src="./imagenes/Iso.DJ.png" alt="Iso Background" class="iso-bg-img">
+                </div>
+            </div>
+
+            <!-- Silueta animada -->
+            <img src="./imagenes/silueta.png" alt="Silueta Aldo" class="silueta-img">
+
+            <div class="hero-content">
+                <p class="hero-subtitle">Music Curator & Open Format Selector</p>
+                <a href="#sets" class="btn btn-primary">Escuchar Ahora</a>
+            </div>
+            
+            <!-- Elemento de fondo para visuales / resplandor -->
+            <div class="hero-bg"></div>
+        </section>
+        <!-- SOBRE MÍ / BIO SECTION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-card liquid-reveal">
+                    <div class="about-grid">
+                        <div class="about-heading">
+                            <h2 class="section-title">SOBRE MÍ</h2>
+                            <h3 class="about-subtitle">El arte de crear la atmósfera perfecta.</h3>
+                        </div>
+                        <div class="about-text">
+                            <p>Especializado en la ambientación sonora de hoteles, espacios exclusivos y eventos privados. Mi trabajo consiste en transformar espacios a través de la música, adaptando cada sesión al ritmo y la energía del lugar, desde un sunset relajado junto a la piscina hasta una noche de clubbing sofisticada.</p>
+                            <p>Con una cuidada selección que transita entre el Afrohouse, los ritmos latinos y urbanos de vanguardia, y los bangers de club más elegantes, ofrezco un formato dinámico y versátil pensado para públicos exigentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- GALLERY / SETS SECTION (Dinámico, para conectar con Stitch) -->
+        <section id="sets" class="sets-section">
+            <div class="container">
+                <h2 class="section-title">Sets & Galería</h2>
+                
+                <!-- Contenedor dinámico -->
+                <div class="sets-grid" id="stitch-sets-container">
+                    
+                    <!-- Tarjeta 1: POOLSIDE VIBES -->
+                    <article class="set-card liquid-reveal">
+                        <div class="set-image-wrapper">
+                            <img src="imagenes/Portada.Poolside.png" alt="Poolside Vibes">
+                        </div>
+                        <div class="set-info">
+                            <h3 class="set-title">POOLSIDE VIBES</h3>
+                            <p class="set-date">Sunset & Relaxed Beats</p>
+                        </div>
+                    </article>
+                    
+                    <!-- Tarjeta 2: CLUBBING & FEST -->
+                    <article class="set-card liquid-reveal">
+                        <div class="set-image-wrapper">
+                            <img src="imagenes/Portada.Clubbing.png" alt="Clubbing & Fest">
+                        </div>
+                        <div class="set-info">
+                            <h3 class="set-title">CLUBBING & FEST</h3>
+                            <p class="set-date">Latin & Afro & Hits</p>
+                        </div>
+                    </article>
+                    
+                    <!-- Tarjeta 3: FEATURINGS -->
+                    <article class="set-card liquid-reveal">
+                        <div class="set-image-wrapper">
+                            <img src="imagenes/Portada.Feat.png" alt="Featurings">
+                        </div>
+                        <div class="set-info">
+                            <h3 class="set-title">FEATURINGS</h3>
+                            <p class="set-date">Live Shows - Singer / Violin / Sax</p>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 4: PREMIUM EVENTS -->
+                    <article class="set-card liquid-reveal">
+                        <div class="set-image-wrapper">
+                            <img src="imagenes/Portada.Bodas.png" alt="Premium Events">
+                        </div>
+                        <div class="set-info">
+                            <h3 class="set-title">PREMIUM EVENTS</h3>
+                            <p class="set-date">Weddings & Private Events</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Contacto & Bookings</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre / Empresa</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email de contacto</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Tipo de evento</label>
+                    <select id="event-type" name="event-type" required style="display:none;">
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="hotel">Hotel / Resort</option>
+                        <option value="private">Evento Privado / Bodas</option>
+                        <option value="club">Club / Festival</option>
+                        <option value="featuring">Live Featuring</option>
+                    </select>
+                    
+                    <div class="custom-select-wrapper">
+                        <div class="custom-select-trigger">
+                            <span>Selecciona una opción...</span>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                            <span class="custom-option" data-value="hotel">Hotel / Resort</span>
+                            <span class="custom-option" data-value="private">Evento Privado / Bodas</span>
+                            <span class="custom-option" data-value="club">Club / Festival</span>
+                            <span class="custom-option" data-value="featuring">Live Featuring</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Fecha del evento</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" maxlength="150" placeholder="Escribe tu mensaje (máx. 150 caracteres)" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">ENVIAR SOLICITUD</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- COVERFLOW SHOWCASE MODAL -->
+    <div id="showcase-modal" class="modal showcase-fullscreen">
+        <span class="close-btn showcase-close-btn">&times;</span>
+        
+        <div class="coverflow-wrapper">
+            <button class="coverflow-arrow coverflow-prev" aria-label="Anterior">&lt;</button>
+            <div class="coverflow-container">
+                <!-- Coverflow items dynamically positioned via JS -->
+                <div class="coverflow-item" data-title="ALL TIME HITS / DJ HITS" data-format="hotel">
+                    <img src="./imagenes/Dj.Hits.png" alt="DJ Hits" draggable="false">
+                </div>
+                <div class="coverflow-item" data-title="DANCE FEVER" data-format="club">
+                    <img src="./imagenes/Dance.Fever.png" alt="Dance Fever" draggable="false">
+                </div>
+                <div class="coverflow-item" data-title="POOLSIDE SESSIONS / CHILL" data-format="hotel">
+                    <img src="./imagenes/Dj.Chill.png" alt="DJ Chill" draggable="false">
+                </div>
+                <div class="coverflow-item" data-title="FLAMENCO GROOVES" data-format="private">
+                    <img src="./imagenes/Flamenco.Grooves.png" alt="Flamenco Grooves" draggable="false">
+                </div>
+                <div class="coverflow-item" data-title="DEEP BLUE SEA" data-format="club">
+                    <img src="./imagenes/Deep.Blue.Sea.png" alt="Deep Blue Sea" draggable="false">
+                </div>
+            </div>
+            <button class="coverflow-arrow coverflow-next" aria-label="Siguiente">&gt;</button>
+        </div>
+
+        <div class="showcase-info-layer">
+            <h2 id="showcase-active-title" class="showcase-title">FORMAT TITLE</h2>
+            <p class="showcase-subtitle">Una experiencia musical diseñada a medida para elevar tu evento a otro nivel.</p>
+            <button id="btn-reserve-format" class="btn btn-primary" data-format="">RESERVAR ESTE FORMATO</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Contacto & Bookings</h3>
+                <p>Email: <a href="mailto:aldodj.musica@gmail.com">aldodj.musica@gmail.com</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/aldo.deejay/" class="social-icon" aria-label="Instagram" target="_blank">IG</a>
+                <a href="#" class="social-icon" aria-label="SoundCloud">SC</a>
+                <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="aviso-legal.html">Aviso Legal</a> | 
+                    <a href="politica-de-privacidad.html">Política de Privacidad</a> | 
+                    <a href="politica-de-cookies.html">Política de Cookies</a>
+                </div>
+                <p>&copy; <span id="current-year"></span> ALDO DEEJAY. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Utilizamos cookies propias y de terceros para analizar el tráfico y mejorar tu experiencia. Puedes aceptarlas o configurar tus preferencias. <a href="politica-de-cookies.html">Más información</a></p>
+            <div class="cookie-buttons">
+                <button id="btn-accept-cookies" class="btn btn-primary">ACEPTAR TODAS</button>
+                <button id="btn-reject-cookies" class="btn btn-secondary">RECHAZAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
