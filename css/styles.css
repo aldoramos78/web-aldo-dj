@@ -197,7 +197,8 @@ section {
    Hero Section
    ========================================================================== */
 .hero-section {
-    height: 100vh;
+    height: 100vh; /* Fallback for older browsers */
+    height: 100dvh; /* Dynamic viewport height to fix mobile UI cutoff */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,7 +296,8 @@ section {
     }
     
     .hero-content {
-        bottom: 15px; /* Más abajo para que no tape la mesa ni las manos */
+        bottom: 5vh; /* Lo subimos un poco para estar seguros. Usamos vh/dvh para adaptarnos. */
+        bottom: 5dvh; 
     }
     
     .hero-content .btn {
