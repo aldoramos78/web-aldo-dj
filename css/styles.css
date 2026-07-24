@@ -322,7 +322,7 @@ h1, h2, h3 {
    About Section
    ========================================================================== */
 .about-section {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: transparent;
     position: relative;
     z-index: 2;
