@@ -459,21 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroIsoContainer = document.getElementById('hero-iso-container');
 
         function render3DIso() {
-            // Lerp para suavizar el movimiento del ratón
-            targetX += (mouseX - targetX) * 0.1;
-            targetY += (mouseY - targetY) * 0.1;
-            
-            // Ángulo de inclinación (Balanceo con el ratón, max 20 grados)
-            const tiltX = targetY * 20; 
-            const tiltY = targetX * -20;
-            
-            // Rotación horizontal con el scroll (ajustada para que sea visible pero elegante)
-            const scrollRotate = currentScroll * 0.1; 
-            
-            // Sumamos la inclinación base (tiltY) con el giro del scroll
-            const finalRotateY = tiltY + scrollRotate;
-            
-            heroIsoWrapper.style.transform = `rotateX(${tiltX}deg) rotateY(${finalRotateY}deg)`;
+            // Se ha eliminado la rotación a petición del usuario. Solo se mantiene el parallax vertical.
             
             // Efecto Parallax Vertical: El isotipo "baja" físicamente por la pantalla
             // Independiente del tamaño del contenido, solo basado en los píxeles scrolleados

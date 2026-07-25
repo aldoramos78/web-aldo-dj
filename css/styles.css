@@ -429,6 +429,14 @@ section {
     margin-bottom: 3rem;
     text-align: center;
     color: var(--texto-principal);
+    text-transform: uppercase;
+    text-shadow: 
+        -1px -1px 0 rgba(139, 92, 246, 0.8),  
+         1px -1px 0 rgba(139, 92, 246, 0.8),
+        -1px  1px 0 rgba(139, 92, 246, 0.8),
+         1px  1px 0 rgba(139, 92, 246, 0.8),
+         0 0 15px rgba(139, 92, 246, 0.7), 
+         0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .sets-grid {
@@ -480,14 +488,25 @@ section {
     z-index: 2;
 }
 
-.set-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(139, 92, 246, 0.25);
-    border-color: transparent;
+@media (hover: hover) {
+    .set-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(139, 92, 246, 0.25);
+        border-color: transparent;
+    }
+
+    .set-card:hover::after {
+        opacity: 1;
+    }
 }
 
-.set-card:hover::after {
-    opacity: 1;
+@media (hover: none) {
+    .set-card::after {
+        opacity: 1;
+    }
+    .set-card {
+        border-color: transparent;
+    }
 }
 
 .set-image-wrapper {
@@ -506,8 +525,10 @@ section {
     display: block;
 }
 
-.set-card:hover .set-image-wrapper img {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .set-card:hover .set-image-wrapper img {
+        transform: scale(1.05);
+    }
 }
 
 .set-info {
@@ -882,7 +903,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
+    margin-top: 2rem;
 }
 
 .coverflow-container {
@@ -1001,6 +1022,8 @@ section {
     line-height: 1.5;
 }
 
+
+
 .coverflow-arrow {
     position: absolute;
     top: 50%;
@@ -1036,25 +1059,21 @@ section {
 }
 
 @media (max-width: 768px) {
+    .coverflow-arrow {
+        display: none; /* Ocultar botones en móvil porque usan touch */
+    }
     .coverflow-item {
-        width: 200px;
+        width: 250px; /* Hacerlos más grandes en móvil */
     }
     .coverflow-item.prev-1 {
-        --base-transform: translateX(-45%) translateZ(-150px) rotateY(30deg);
+        --base-transform: translateX(-50%) translateZ(-150px) rotateY(30deg);
     }
     .coverflow-item.next-1 {
-        --base-transform: translateX(45%) translateZ(-150px) rotateY(-30deg);
+        --base-transform: translateX(50%) translateZ(-150px) rotateY(-30deg);
     }
     .showcase-title {
         font-size: 1.4rem;
     }
-    .coverflow-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    .coverflow-prev { left: 0; }
-    .coverflow-next { right: 0; }
 }
 
 
