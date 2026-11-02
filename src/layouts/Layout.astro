@@ -44,16 +44,6 @@ const {
     <!-- Canvas de Partículas Optimizado para Rendimiento & Batería -->
     <canvas id="particles-bg"></canvas>
 
-    <!-- Filtro SVG para Transición "Onda Líquida" -->
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="liquid-filter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </defs>
-    </svg>
-
     <Header />
 
     <slot />
@@ -111,10 +101,10 @@ const {
       if (backToTopBtn) {
         window.addEventListener('scroll', () => {
           if (window.scrollY > 350) {
-            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
             backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
           } else {
-            backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
             backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
           }
         }, { passive: true });
@@ -141,10 +131,16 @@ const {
           if (ctx) {
             let width = (canvas.width = window.innerWidth);
             let height = (canvas.height = window.innerHeight);
+            let lastWidth = window.innerWidth;
 
             window.addEventListener('resize', () => {
-              width = canvas.width = window.innerWidth;
-              height = canvas.height = window.innerHeight;
+              // Solo redimensionar si cambia el ancho (ej: rotación de pantalla).
+              // Evita que la aparición/desaparición de la barra de navegación móvil en scroll recalcule el canvas.
+              if (window.innerWidth !== lastWidth) {
+                lastWidth = window.innerWidth;
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+              }
             }, { passive: true });
 
             // En móvil solo 15 partículas lentas; en escritorio hasta 45

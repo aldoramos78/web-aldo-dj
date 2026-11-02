@@ -1,9 +1,9 @@
 ---
 ---
-<section id="hero" class="relative min-h-[100dvh] w-full flex flex-col justify-center items-center overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12">
+<section id="hero" class="relative min-h-[100svh] lg:min-h-[100dvh] w-full flex flex-col justify-center items-center overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12">
   
-  <!-- Logo Iso de Fondo (Parallax vertical suave) -->
-  <div id="hero-iso-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-25 lg:opacity-20 transition-transform duration-75 will-change-transform">
+  <!-- Logo Iso de Fondo: Estático y ultra-fluido en móvil (cero tirones, cero saltos); Parallax 1:1 en desktop -->
+  <div id="hero-iso-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-25 lg:opacity-20 select-none lg:will-change-transform">
     <div class="w-[300px] sm:w-[520px] lg:w-[800px] xl:w-[950px] aspect-square flex items-center justify-center">
       <img 
         src="/imagenes/Iso.DJ.png" 
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <!-- Contenido y Jerarquía SEO H1: Centrado en viewport completo (100dvh) -->
+  <!-- Contenido y Jerarquía SEO H1: Centrado en viewport completo -->
   <div class="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 text-center my-auto py-4 sm:py-8">
     
     <!-- Badge de Localización: Fuerteventura • Canarias -->
@@ -79,33 +79,21 @@
 </style>
 
 <script>
-  // Parallax Vertical Puro para el Isotipo (sin rotación 3D para máxima fluidez)
+  // Parallax exclusivo para pantallas de escritorio con ratón físico (1024px+ y hover: hover)
+  // En móviles y tablets táctiles NO se ejecuta jamás: 0 saltos, 0 tirones, 0 rebotes
+  const isDesktop = window.matchMedia('(min-width: 1024px) and (hover: hover)').matches;
   const isoBg = document.getElementById('hero-iso-container');
-  if (isoBg) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          isoBg.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.35}px))`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
-</script>
 
-<script>
-  // Parallax Vertical Puro para el Isotipo (sin rotación 3D para máxima fluidez)
-  const isoBg = document.getElementById('hero-iso-container');
-  if (isoBg) {
+  if (isDesktop && isoBg) {
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          isoBg.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.35}px))`;
+          // Solo ejecuta mientras el Hero esté dentro o cerca del viewport
+          if (scrollY < window.innerHeight * 1.2) {
+            isoBg.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
+          }
           ticking = false;
         });
         ticking = true;
