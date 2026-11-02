@@ -1,64 +1,238 @@
 ---
 ---
-<section id="hero" class="relative min-h-[100svh] lg:min-h-[100dvh] w-full flex flex-col justify-center items-center overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12">
+<section id="hero" class="relative min-h-[100svh] lg:min-h-screen w-full flex flex-col justify-between items-center overflow-hidden pt-24 sm:pt-28 pb-0">
   
-  <!-- Logo Iso de Fondo: Estático y ultra-fluido en móvil (cero tirones, cero saltos); Parallax 1:1 en desktop -->
-  <div id="hero-iso-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-25 lg:opacity-20 select-none lg:will-change-transform">
-    <div class="w-[300px] sm:w-[520px] lg:w-[800px] xl:w-[950px] aspect-square flex items-center justify-center">
-      <img 
-        src="/imagenes/Iso.DJ.png" 
-        alt="Aldo Deejay Isotipo" 
-        class="w-full h-full object-contain filter drop-shadow-[0_0_50px_rgba(139,92,246,0.3)]"
-        width="950"
-        height="950"
-        loading="eager"
-      />
-    </div>
-  </div>
+  <!-- Cuadrícula técnica sutil de fondo (Grid de telemetría de audio) -->
+  <div class="absolute inset-0 bg-[radial-gradient(#8B5CF6_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none -z-20"></div>
 
-  <!-- Contenido y Jerarquía SEO H1: Centrado en viewport completo -->
-  <div class="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 text-center my-auto py-4 sm:py-8">
+  <!-- Halo de resplandor morado ambiental profundo (Tono morado neón de la Opción 1) -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[650px] lg:w-[850px] h-[350px] sm:h-[650px] lg:h-[850px] bg-purple-700/25 rounded-full blur-[120px] lg:blur-[160px] pointer-events-none -z-10"></div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] sm:w-[420px] h-[220px] sm:h-[420px] bg-fuchsia-600/20 rounded-full blur-[90px] pointer-events-none -z-10"></div>
+
+  <!-- CONTENIDO CENTRAL PRINCIPAL -->
+  <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center items-center z-10 py-4 sm:py-6">
     
-    <!-- Badge de Localización: Fuerteventura • Canarias -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md mb-5 sm:mb-8 text-xs sm:text-sm uppercase tracking-[0.28em] text-gray-300 font-bold">
-      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      Fuerteventura &bull; Canarias
+    <!-- Badge de Localización: Fuerteventura • Canary Islands -->
+    <div class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-1.5 rounded-full bg-black/70 border border-purple-500/35 backdrop-blur-md mb-4 sm:mb-6 text-xs sm:text-sm uppercase tracking-[0.25em] text-gray-200 font-semibold shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+      <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse shadow-[0_0_8px_#c084fc]"></span>
+      Fuerteventura &bull; Canary Islands
     </div>
 
-    <!-- H1 Semántico Brutalista de Alto Impacto -->
-    <h1 class="font-black uppercase text-white tracking-tighter leading-[0.85] select-none text-[13vw] sm:text-[11vw] lg:text-[10rem] xl:text-[11.5rem] drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)]">
-      ALDO DEEJAY
+    <!-- H1 Semántico con Efecto Tornasol Cristalino -->
+    <h1 class="hero-subtitulo font-black uppercase tracking-tight leading-[0.98] sm:leading-[0.92] text-2xl sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl mx-auto select-none">
+      El Arte de Crear la Atmósfera Perfecta
     </h1>
 
-    <!-- Subtítulo de Servicios: Efecto Cristal / Reflejo Tornasol Morado Neón -->
-    <h2 class="hero-subtitulo text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mt-4 sm:mt-6 max-w-5xl mx-auto leading-tight">
-      Música & Sesiones DJ para Hoteles, Bodas y Eventos
-    </h2>
-
-    <!-- Bajada descriptiva brutalista -->
-    <p class="max-w-3xl mx-auto mt-5 sm:mt-8 text-sm sm:text-lg lg:text-xl text-gray-300 font-light leading-relaxed">
-      Elegancia, estética y atmósfera: desde el groove envolvente de un atardecer junto al mar hasta el pulso dinámico de la pista de baile.
+    <!-- Bajada descriptiva de alta fidelidad acústica -->
+    <p class="max-w-2xl mx-auto mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-gray-300 font-light leading-relaxed px-2">
+      Dirección acústica y experiencias sonoras para hoteles boutique, bodas de autor y eventos exclusivos.
     </p>
 
-    <!-- CTAs de Conversión Brutalistas -->
-    <div class="mt-7 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-      <a href="#sets" class="btn-primary w-full sm:w-auto text-sm sm:text-base font-bold tracking-wider px-9 py-4 shadow-[0_0_30px_rgba(139,92,246,0.6)]">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    <!-- NÚCLEO CENTRAL: ISOTIPO + ÓRBITA SONORA + NODOS TELEMÉTRICOS -->
+    <div class="relative w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[560px] aspect-square flex items-center justify-center my-3 sm:my-6 select-none">
+      
+      <!-- Anillo Orbital Principal -->
+      <div class="absolute inset-4 sm:inset-6 rounded-full border border-purple-500/30 pointer-events-none shadow-[0_0_35px_rgba(139,92,246,0.15)]"></div>
+      
+      <!-- Anillo Orbital Secundario punteado -->
+      <div class="absolute inset-8 sm:inset-10 rounded-full border border-dashed border-purple-400/20 pointer-events-none animate-[spin_120s_linear_infinite]"></div>
+
+      <!-- Isotipo Central con tono Morado Intenso (Opción 1) -->
+      <div class="relative z-10 w-36 sm:w-52 lg:w-60 aspect-square flex items-center justify-center">
+        <img 
+          src="/imagenes/Iso.DJ.png" 
+          alt="Aldo Deejay Isotipo" 
+          class="w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(168,85,247,0.85)] drop-shadow-[0_0_70px_rgba(139,92,246,0.5)]"
+          width="480"
+          height="480"
+          loading="eager"
+        />
+      </div>
+
+      <!-- NODOS ORBITALES EN DESKTOP / TABLET (Posicionados alrededor de la órbita con líneas conectoras) -->
+      
+      <!-- Nodo 1: Izquierda (Sunset Afro House) -->
+      <div class="hidden sm:flex absolute -left-16 lg:-left-24 top-[35%] -translate-y-1/2 items-center gap-3 z-20 group">
+        <div class="text-right">
+          <div class="inline-flex items-center gap-1.5 text-[11px] lg:text-xs font-mono font-bold uppercase tracking-wider text-amber-300 bg-black/80 px-2.5 py-1 rounded-full border border-amber-500/30 backdrop-blur-md shadow-[0_0_12px_rgba(251,191,36,0.2)]">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+            Sunset Afro House
+          </div>
+          <div class="text-[10px] lg:text-[11px] font-mono text-gray-400 mt-1">
+            120-122 BPM &bull; organic chords
+          </div>
+        </div>
+        <!-- Línea conectora hacia el anillo -->
+        <div class="w-6 lg:w-10 h-[1px] bg-gradient-to-r from-amber-400/60 to-purple-500/40"></div>
+        <div class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></div>
+      </div>
+
+      <!-- Nodo 2: Derecha Arriba (Balearic & Organic) -->
+      <div class="hidden sm:flex absolute -right-16 lg:-right-24 top-[24%] items-center gap-3 z-20 group">
+        <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></div>
+        <div class="w-6 lg:w-10 h-[1px] bg-gradient-to-r from-purple-500/40 to-cyan-400/60"></div>
+        <div class="text-left">
+          <div class="inline-flex items-center gap-1.5 text-[11px] lg:text-xs font-mono font-bold uppercase tracking-wider text-cyan-300 bg-black/80 px-2.5 py-1 rounded-full border border-cyan-500/30 backdrop-blur-md shadow-[0_0_12px_rgba(34,211,238,0.2)]">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            Balearic & Organic
+          </div>
+          <div class="text-[10px] lg:text-[11px] font-mono text-gray-400 mt-1">
+            lush grooves &bull; luxury resorts
+          </div>
+        </div>
+      </div>
+
+      <!-- Nodo 3: Derecha Abajo (Peak Hour Climax) -->
+      <div class="hidden sm:flex absolute -right-14 lg:-right-20 bottom-[22%] items-center gap-3 z-20 group">
+        <div class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_8px_#e879f9]"></div>
+        <div class="w-6 lg:w-10 h-[1px] bg-gradient-to-r from-purple-500/40 to-fuchsia-400/60"></div>
+        <div class="text-left">
+          <div class="inline-flex items-center gap-1.5 text-[11px] lg:text-xs font-mono font-bold uppercase tracking-wider text-fuchsia-300 bg-black/80 px-2.5 py-1 rounded-full border border-fuchsia-500/30 backdrop-blur-md shadow-[0_0_12px_rgba(232,121,249,0.2)]">
+            <span class="w-2 h-2 rounded-full bg-fuchsia-400"></span>
+            Peak Hour Climax
+          </div>
+          <div class="text-[10px] lg:text-[11px] font-mono text-gray-400 mt-1">
+            melodic waves &bull; pure energy
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NODOS COMPACTOS EN MÓVIL (<640px): Ticker horizontal adaptativo -->
+    <div class="flex sm:hidden flex-wrap items-center justify-center gap-2 mb-3 max-w-sm mx-auto">
+      <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold uppercase text-amber-300 bg-black/70 px-2.5 py-1 rounded-full border border-amber-500/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+        Sunset Afro House
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold uppercase text-cyan-300 bg-black/70 px-2.5 py-1 rounded-full border border-cyan-500/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        Balearic & Organic
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold uppercase text-fuchsia-300 bg-black/70 px-2.5 py-1 rounded-full border border-fuchsia-500/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+        Peak Hour Climax
+      </span>
+    </div>
+
+    <!-- REPRODUCTOR MINI-PLAYER FLOTANTE (Glassmorphism de la Opción 2) -->
+    <div class="w-full max-w-xl mx-auto glass-panel rounded-2xl p-3 sm:p-4 border border-purple-500/30 shadow-[0_10px_35px_rgba(0,0,0,0.8),0_0_25px_rgba(139,92,246,0.25)] relative z-30">
+      <div class="flex items-center gap-3 sm:gap-4">
+        
+        <!-- Botón Play/Pause Interactivo -->
+        <button 
+          id="hero-play-btn"
+          aria-label="Reproducir adelanto de Creep"
+          class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-cyan-500 via-indigo-600 to-purple-600 flex-shrink-0 flex items-center justify-center text-white shadow-[0_0_18px_rgba(34,211,238,0.5)] hover:scale-105 active:scale-95 transition-all group focus:outline-none"
+        >
+          <!-- Play Icon -->
+          <svg id="hero-play-icon" class="w-5 h-5 sm:w-6 sm:h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <!-- Pause Icon (oculto por defecto) -->
+          <svg id="hero-pause-icon" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+
+        <!-- Track Info + Barra de Progreso -->
+        <div class="flex-1 min-w-0 text-left">
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold tracking-wider bg-purple-950/80 text-purple-300 uppercase border border-purple-500/40">
+                NOW PLAYING
+              </span>
+              <span class="text-[10px] sm:text-xs font-mono font-semibold text-cyan-400">
+                122 BPM
+              </span>
+            </div>
+            <!-- Vúmetro / Barras de ecualizador animadas -->
+            <div class="flex items-end gap-1 h-3.5" id="hero-equalizer">
+              <span class="w-1 bg-cyan-400 rounded-full h-2 animate-pulse"></span>
+              <span class="w-1 bg-purple-400 rounded-full h-3.5 animate-pulse" style="animation-delay: 150ms"></span>
+              <span class="w-1 bg-fuchsia-400 rounded-full h-1.5 animate-pulse" style="animation-delay: 300ms"></span>
+              <span class="w-1 bg-cyan-400 rounded-full h-3 animate-pulse" style="animation-delay: 450ms"></span>
+            </div>
+          </div>
+
+          <!-- Título del track con link opcional -->
+          <a href="/creep" class="block text-xs sm:text-sm font-bold text-white hover:text-purple-300 transition-colors truncate">
+            CREEP (Afro House Sunset Mix) &mdash; Radiohead Rework
+          </a>
+
+          <!-- Barra de progreso -->
+          <div class="mt-1.5 flex items-center gap-2 text-[9px] sm:text-[10px] font-mono text-gray-400">
+            <span id="hero-track-time">02:14</span>
+            <div class="flex-1 h-1.5 bg-black/60 rounded-full overflow-hidden border border-white/10">
+              <div id="hero-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500 w-[35%] rounded-full transition-all duration-300"></div>
+            </div>
+            <span>06:30</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTAs DE CONVERSIÓN (Estilo de la Opción 2) -->
+    <div class="mt-5 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 w-full sm:w-auto">
+      <a 
+        href="#sets" 
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-9 py-3 sm:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 shadow-[0_0_25px_rgba(139,92,246,0.6)] hover:shadow-[0_0_35px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-0.5 active:translate-y-0"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
         </svg>
         Escuchar Sets
       </a>
-      <a href="#contact" class="btn-secondary w-full sm:w-auto text-sm sm:text-base font-bold tracking-wider px-9 py-4 border-2 border-white/20 hover:border-white text-white">
-        Consultar Disponibilidad
+      
+      <a 
+        href="#contact" 
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-9 py-3 sm:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm text-white bg-[#12111A]/90 hover:bg-[#1A1829] border border-white/20 hover:border-purple-400/80 transition-all shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+      >
+        Reservar Fecha 2025
       </a>
     </div>
 
   </div>
+
+  <!-- BANNER SEPARADOR DEL HERO (Banner de telemetría inferior de la captura adjunta) -->
+  <div class="w-full border-t border-purple-500/20 bg-[#09080E]/95 backdrop-blur-md py-3 sm:py-3.5 px-4 sm:px-8 mt-6 sm:mt-10 z-20 select-none">
+    <div class="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-xs font-mono text-gray-300">
+      
+      <!-- Micro-estadísticas en directo -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-center">
+        <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">+15</strong>
+          <span class="text-gray-300">Años de trayectoria</span>
+        </span>
+
+        <span class="text-purple-500/50 font-sans hidden sm:inline">|</span>
+
+        <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">6</strong>
+          <span class="text-gray-300">Formatos Escénicos</span>
+        </span>
+
+        <span class="text-purple-500/50 font-sans hidden sm:inline">|</span>
+
+        <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">PRO</strong>
+          <span class="text-gray-300">Rider Técnico Pro</span>
+        </span>
+      </div>
+
+      <!-- Copyright / Telemetría derecha -->
+      <div class="text-[10px] sm:text-xs text-gray-500 tracking-wider">
+        &copy; 2025 ALDO DEEJAY
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <style>
-  /* Efecto tornasol / cristal prismático en tonos morados y plata */
+  /* Efecto tornasol / cristal prismático en tonos morados, plata y fucsia */
   .hero-subtitulo {
     background: linear-gradient(135deg, #FFFFFF 0%, #F3E8FF 20%, #C084FC 45%, #E879F9 68%, #A855F7 85%, #FFFFFF 100%);
     background-size: 220% auto;
@@ -79,25 +253,53 @@
 </style>
 
 <script>
-  // Parallax exclusivo para pantallas de escritorio con ratón físico (1024px+ y hover: hover)
-  // En móviles y tablets táctiles NO se ejecuta jamás: 0 saltos, 0 tirones, 0 rebotes
-  const isDesktop = window.matchMedia('(min-width: 1024px) and (hover: hover)').matches;
-  const isoBg = document.getElementById('hero-iso-container');
+  // Mini reproductor interactivo
+  const playBtn = document.getElementById('hero-play-btn');
+  const playIcon = document.getElementById('hero-play-icon');
+  const pauseIcon = document.getElementById('hero-pause-icon');
+  const progressBar = document.getElementById('hero-progress-bar');
+  const timeDisplay = document.getElementById('hero-track-time');
+  const equalizer = document.getElementById('hero-equalizer');
+  
+  let isPlaying = false;
+  let seconds = 134; // 02:14
+  let playInterval: any = null;
 
-  if (isDesktop && isoBg) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          // Solo ejecuta mientras el Hero esté dentro o cerca del viewport
-          if (scrollY < window.innerHeight * 1.2) {
-            isoBg.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
+  function formatTime(s: number) {
+    const mins = Math.floor(s / 60);
+    const secs = s % 60;
+    return `0${mins}:${secs < 10 ? '0' + secs : secs}`;
   }
+
+  playBtn?.addEventListener('click', () => {
+    isPlaying = !isPlaying;
+
+    if (isPlaying) {
+      playIcon?.classList.add('hidden');
+      pauseIcon?.classList.remove('hidden');
+
+      playInterval = setInterval(() => {
+        seconds++;
+        if (seconds >= 390) { // 06:30
+          seconds = 134;
+        }
+        if (timeDisplay) timeDisplay.textContent = formatTime(seconds);
+        if (progressBar) progressBar.style.width = `${(seconds / 390) * 100}%`;
+      }, 1000);
+
+      // Activar animación en barras del ecualizador
+      equalizer?.querySelectorAll('span').forEach(bar => {
+        bar.classList.add('animate-pulse');
+      });
+    } else {
+      playIcon?.classList.remove('hidden');
+      pauseIcon?.classList.add('hidden');
+      clearInterval(playInterval);
+
+      // Desactivar animación en barras del ecualizador
+      equalizer?.querySelectorAll('span').forEach(bar => {
+        bar.classList.remove('animate-pulse');
+      });
+    }
+  });
 </script>
