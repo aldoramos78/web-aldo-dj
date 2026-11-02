@@ -60,51 +60,48 @@ const {
 
     <Footer />
 
-    <!-- Botón Subir Elegante con Tornasol H2 y Morado Blur -->
+    <!-- Botón Subir Elegante: Compacto en móvil, interior transparente y marco tornasol con blur -->
     <button
       id="back-to-top"
       aria-label="Volver arriba"
-      class="fixed bottom-6 right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out group focus:outline-none"
+      class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full opacity-0 pointer-events-none translate-y-3 transition-all duration-300 ease-out group focus:outline-none"
     >
-      <!-- Halo exterior morado blur sutil que no invade la flecha -->
-      <div class="tornasol-glow absolute -inset-1.5 rounded-full blur-md opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+      <!-- Halo exterior morado blur en el marco -->
+      <div class="tornasol-glow absolute -inset-1 rounded-full blur-md opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
-      <!-- Anillo exterior con el efecto tornasol del H2 -->
-      <div class="tornasol-ring relative w-full h-full rounded-full p-[2px] transition-transform duration-300 group-hover:scale-105 active:scale-95 shadow-2xl">
-        <!-- Disco interior oscuro semitransparente para máximo contraste de la flecha -->
-        <div class="w-full h-full rounded-full bg-[#0D0D11]/90 backdrop-blur-md flex items-center justify-center">
-          <svg 
-            class="w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-300 group-hover:-translate-y-1" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-          </svg>
-        </div>
+      <!-- Estructura circular con interior transparente y marco tornasol -->
+      <div class="relative w-full h-full rounded-full transition-transform duration-300 group-hover:scale-105 active:scale-95 flex items-center justify-center">
+        <!-- Anillo SVG con gradiente tornasol idéntico al H2 y centro 100% transparente -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 48 48" fill="none">
+          <defs>
+            <linearGradient id="btn-tornasol-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="20%" stop-color="#F3E8FF" />
+              <stop offset="45%" stop-color="#C084FC" />
+              <stop offset="70%" stop-color="#E879F9" />
+              <stop offset="85%" stop-color="#A855F7" />
+              <stop offset="100%" stop-color="#FFFFFF" />
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="22" stroke="url(#btn-tornasol-grad)" stroke-width="2.2" fill="transparent" />
+        </svg>
+
+        <!-- Flecha Blanca Nítida sin obstrucción -->
+        <svg 
+          class="relative z-10 w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 group-hover:-translate-y-0.5 filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
       </div>
     </button>
 
     <style is:global>
-      /* Anillo exterior con gradiente tornasol idéntico al H2 */
-      .tornasol-ring {
-        background: linear-gradient(135deg, #FFFFFF 0%, #F3E8FF 20%, #C084FC 45%, #E879F9 68%, #A855F7 85%, #FFFFFF 100%);
-        background-size: 240% 240%;
-        animation: tornasol-shine 6s ease-in-out infinite alternate;
-      }
-
-      /* Halo exterior con resplandor morado difuminado */
+      /* Halo exterior con resplandor morado difuminado en el marco */
       .tornasol-glow {
-        background: radial-gradient(circle, rgba(168, 85, 247, 0.7) 0%, rgba(192, 132, 252, 0.35) 45%, transparent 75%);
-      }
-
-      @keyframes tornasol-shine {
-        0% {
-          background-position: 0% 50%;
-        }
-        100% {
-          background-position: 100% 50%;
-        }
+        background: radial-gradient(circle, rgba(168, 85, 247, 0.65) 0%, rgba(192, 132, 252, 0.35) 50%, transparent 75%);
       }
     </style>
 
