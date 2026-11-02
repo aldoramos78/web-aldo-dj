@@ -1,0 +1,82 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black border-t border-white/10 pt-16 pb-12 relative z-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      
+      <!-- Brand & Mercantil Info -->
+      <div class="md:col-span-2 space-y-4">
+        <img 
+          src="/imagenes/Logo.DJ.Blanco.png" 
+          alt="Aldo Deejay" 
+          class="h-10 w-auto"
+          width="140"
+          height="40"
+          loading="lazy"
+        />
+        <p class="text-sm text-gray-400 font-light max-w-sm leading-relaxed">
+          Música y sesiones DJ con criterio, estética y sonido profesional para hoteles, terrazas, bodas y eventos en Fuerteventura y Canarias.
+        </p>
+        <div class="text-xs text-gray-500 space-y-1">
+          <p><strong class="text-gray-400">Sociedad Productora:</strong> VIP CRAB EVENTS, S.L.U.</p>
+          <p>Tuineje, Fuerteventura (Las Palmas, Islas Canarias)</p>
+        </div>
+      </div>
+
+      <!-- Navegación & Música -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400">Navegación</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/#hero" class="hover:text-white transition-colors">Inicio</a></li>
+          <li><a href="/#about" class="hover:text-white transition-colors">Sobre Mí</a></li>
+          <li><a href="/creep" class="hover:text-purple-300 text-purple-400 font-medium transition-colors">Creep (Afro House Cover)</a></li>
+          <li><a href="/#sets" class="hover:text-white transition-colors">Sets & Galería</a></li>
+          <li><a href="/#showcase" class="hover:text-white transition-colors">Showcase Formatos</a></li>
+          <li><a href="/#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="/#contact" class="hover:text-white transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Social & Recursos Semánticos -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400">Presencia & AEO</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>
+            <a href="https://www.instagram.com/aldodeejay" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+              Instagram (@aldodeejay)
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              Spotify Artist (Aldo)
+            </a>
+          </li>
+          <li>
+            <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              SoundCloud Sets
+            </a>
+          </li>
+          <li>
+            <a href="/llms.txt" target="_blank" class="text-xs text-purple-400/80 hover:text-purple-300 font-mono flex items-center gap-1 mt-4">
+              <span>[llms.txt]</span> Resumen Semántico IA
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>&copy; {currentYear} Aldo Deejay · VIP CRAB EVENTS, S.L.U. Fuerteventura, Islas Canarias.</p>
+      
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="/aviso-legal" class="hover:text-gray-300 transition-colors">Aviso Legal</a>
+        <a href="/politica-de-privacidad" class="hover:text-gray-300 transition-colors">Política de Privacidad</a>
+        <a href="/politica-de-cookies" class="hover:text-gray-300 transition-colors">Política de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

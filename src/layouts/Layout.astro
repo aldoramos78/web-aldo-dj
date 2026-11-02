@@ -1,0 +1,135 @@
+---
+import SEO from '../components/seo/SEO.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  includeMusicRecording?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType,
+  noindex,
+  includeMusicRecording = false
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <SEO 
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+    />
+    <SchemaOrg includeMusicRecording={includeMusicRecording} />
+  </head>
+  <body class="bg-[#0D0D11] text-white font-sans antialiased selection:bg-purple-600 selection:text-white">
+    
+    <!-- Canvas de Partículas Optimizado para Rendimiento & Batería -->
+    <canvas id="particles-bg"></canvas>
+
+    <!-- Filtro SVG para Transición "Onda Líquida" -->
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="liquid-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <Header />
+
+    <slot />
+
+    <Footer />
+
+    <!-- Script de Partículas Condicional y Ligero -->
+    <script>
+      const canvas = document.getElementById('particles-bg') as HTMLCanvasElement | null;
+      if (canvas) {
+        const isMobile = window.innerWidth < 768;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Si el usuario prefiere movimiento reducido o es móvil de bajo rendimiento, omitimos la física continua
+        if (!prefersReducedMotion) {
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            let width = (canvas.width = window.innerWidth);
+            let height = (canvas.height = window.innerHeight);
+
+            window.addEventListener('resize', () => {
+              width = canvas.width = window.innerWidth;
+              height = canvas.height = window.innerHeight;
+            }, { passive: true });
+
+            // En móvil solo 15 partículas lentas; en escritorio hasta 45
+            const count = isMobile ? 15 : 40;
+            const particles: Array<{ x: number; y: number; vx: number; vy: number; size: number }> = [];
+
+            for (let i = 0; i < count; i++) {
+              particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.4),
+                vy: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.4),
+                size: Math.random() * 1.5 + 0.5
+              });
+            }
+
+            let animationId: number;
+            function render() {
+              if (!ctx) return;
+              ctx.clearRect(0, 0, width, height);
+              ctx.fillStyle = 'rgba(139, 92, 246, 0.4)';
+
+              for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+              }
+
+              animationId = requestAnimationFrame(render);
+            }
+
+            render();
+
+            // Pausar si la pestaña no está visible para ahorrar 100% de CPU
+            document.addEventListener('visibilitychange', () => {
+              if (document.hidden) {
+                cancelAnimationFrame(animationId);
+              } else {
+                render();
+              }
+            });
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

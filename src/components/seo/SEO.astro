@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "ALDO DEEJAY | DJ para Hoteles, Bodas y Eventos en Fuerteventura y Canarias",
+  description = "Sesiones DJ con identidad, estética cuidada y sonido profesional para hoteles, terrazas, bodas y eventos privados en Fuerteventura, Lanzarote y Canarias. Respaldado por VIP CRAB EVENTS, S.L.U.",
+  canonical = Astro.url.href,
+  ogImage = "https://www.aldodeejay.com/imagenes/silueta.webp",
+  ogType = "website",
+  noindex = false
+} = Astro.props;
+
+const siteName = "Aldo Deejay";
+---
+
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="/imagenes/Iso.DJ.png" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+<!-- Geo & Locale Tags -->
+<meta name="geo.region" content="ES-CN" />
+<meta name="geo.placename" content="Fuerteventura, Islas Canarias" />
+<meta name="language" content="Spanish" />
+<meta name="author" content="Aldo Deejay / VIP CRAB EVENTS, S.L.U." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#0D0D11" />
+<meta name="color-scheme" content="dark" />

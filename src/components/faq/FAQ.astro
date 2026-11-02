@@ -1,0 +1,61 @@
+---
+const faqs = [
+  {
+    q: "¿En qué tipo de eventos trabajas habitualmente?",
+    a: "Principalmente en hoteles, terrazas y beach bars, así como en bodas y celebraciones privadas. La música se ajusta siempre a lo que pide el momento: desde ritmos suaves y elegantes para un sunset hasta sesiones de baile animadas para fiesta."
+  },
+  {
+    q: "¿Cuál es tu zona de actuación?",
+    a: "Mi base y trabajo habitual está en Fuerteventura, con desplazamientos frecuentes a Lanzarote. Para otras islas del archipiélago canario se evalúan propuestas para eventos destacados. No me desplazo a la península."
+  },
+  {
+    q: "¿Cuentas con equipo propio de sonido e iluminación?",
+    a: "Sí. A través de la empresa VIP CRAB EVENTS, S.L.U. podemos aportar el rider técnico de sonido e iluminación acorde al espacio y aforo, además de formatos especiales con escenografía (como la cabina hinchable Octopus Party)."
+  },
+  {
+    q: "¿Con cuánta antelación conviene reservar?",
+    a: "Para bodas o temporadas altas en hostelería es conveniente contactar con antelación para comprobar disponibilidad de fecha y coordinar los detalles técnicos con tranquilidad."
+  },
+  {
+    q: "¿Cómo se gestiona la contratación y factura?",
+    a: "Toda la actividad se canaliza de forma legal y profesional a través de la mercantil VIP CRAB EVENTS, S.L.U. (con sede en Tuineje, Fuerteventura), emitiendo contrato formal y factura."
+  }
+];
+---
+
+<section id="faq" class="py-20 sm:py-28 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#A78BFA] uppercase block mb-3">
+        Resolución de Dudas
+      </span>
+      <h2 class="section-title !mb-4">
+        PREGUNTAS FRECUENTES
+      </h2>
+      <div class="mx-auto w-36 h-[3px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-5"></div>
+      <p class="text-gray-300 max-w-xl mx-auto text-base sm:text-lg font-light">
+        Claridad y profesionalidad para coordinar tu fecha y evento sin complicaciones.
+      </p>
+    </div>
+
+    <!-- Semantic Accordion for AEO / SEO -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 open:border-purple-500/50 open:shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+          <summary class="flex items-center justify-between p-6 text-left cursor-pointer list-none select-none text-white font-semibold text-base sm:text-lg group-hover:text-purple-300 transition-colors">
+            <span class="flex items-center gap-3">
+              <span class="text-purple-400 font-bold text-sm">0{index + 1}.</span>
+              {faq.q}
+            </span>
+            <span class="ml-4 flex-shrink-0 text-purple-400 group-open:rotate-180 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-gray-300 text-sm sm:text-base font-light leading-relaxed border-t border-white/5">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

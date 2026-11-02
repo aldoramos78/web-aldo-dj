@@ -1,0 +1,252 @@
+---
+const sets = [
+  {
+    id: "poolside",
+    title: "Poolside Vibes",
+    category: "01 / SUNSET & RELAXED BEATS",
+    venueTag: "Hotel & Rooftop",
+    dotColor: "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]",
+    image: "/imagenes/Portada.Poolside.webp",
+    badges: ["AFRO DEEP", "BALEARIC", "116-122 BPM"],
+    description: "Atmósferas cálidas y elegantes pensadas para terrazas al atardecer, beach clubs y hoteles boutique de lujo. Texturas orgánicas, percusiones sutiles y melodías que fluyen con la caída del sol.",
+    trackTitle: "Sunset Terrace Session (Live Mix)",
+    trackMeta: "64:20 • 320 kbps High-Res",
+    actionText: "Escuchar Set",
+    actionLink: "https://soundcloud.com/aldo-ramos-espin",
+    soundCloudUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/aldo-ramos-espin&color=%238b5cf6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+    id: "clubbing",
+    title: "Clubbing & Fest",
+    category: "02 / LATIN & AFRO & HITS",
+    venueTag: "Peak Time Club",
+    dotColor: "bg-fuchsia-500 shadow-[0_0_8px_rgba(217,70,239,0.8)]",
+    image: "/imagenes/Portada.Clubbing.webp",
+    badges: ["CLUB BANGERS", "LATIN TECH", "125-130 BPM"],
+    description: "Energía pura para salas nocturnas, macro-eventos y festivales. Mezcla dinámica de tech house contundente, remixes exclusivos y bangers latinos que mantienen la pista en constante ebullición.",
+    trackTitle: "Peak Hour Club Experience 2025",
+    trackMeta: "78:15 • Festival Edition",
+    actionText: "Escuchar Set",
+    actionLink: "https://soundcloud.com/aldo-ramos-espin",
+    soundCloudUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/aldo-ramos-espin&color=%238b5cf6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+    id: "featurings",
+    title: "Featurings",
+    category: "03 / LIVE SHOWS & INSTRUMENTALS",
+    venueTag: "Show Híbrido",
+    dotColor: "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]",
+    image: "/imagenes/Portada.Feat.webp",
+    badges: ["LIVE FUSION", "VIOLIN & SAX", "VOCALS"],
+    description: "El impacto de la música electrónica fusionada con músicos en vivo sobre el escenario: cantantes en directo, saxofonistas y violín eléctrico sincronizados con bases rítmicas de vanguardia.",
+    trackTitle: "Live Violin & Vocal Jam Sessions",
+    trackMeta: "52:48 • Acoustic & Electronic",
+    actionText: "Ver Rider",
+    actionLink: "#contact",
+    soundCloudUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/aldo-ramos-espin&color=%238b5cf6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+    id: "premium",
+    title: "Premium Events",
+    category: "04 / BODAS & CELEBRACIONES PRIVADAS",
+    venueTag: "VIP CRAB Backed",
+    dotColor: "bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)]",
+    image: "/imagenes/Portada.Bodas.webp",
+    badges: ["LUXURY WEDDINGS", "CORPORATE VIP", "COCKTAIL & PARTY"],
+    description: "Curaduría impecable para bodas de destino y galas corporativas exclusivas en Fuerteventura y el archipiélago. Asesoramiento personalizado, microfonía y respaldo de infraestructura técnica integral con VIP CRAB EVENTS, S.L.U.",
+    trackTitle: "Cocktail to Climax Live Showcase",
+    trackMeta: "45:00 • Wedding & Private Repertoire",
+    actionText: "Consultar Fechas",
+    actionLink: "#contact",
+    soundCloudUrl: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/aldo-ramos-espin&color=%238b5cf6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  }
+];
+---
+
+<section id="sets" class="py-24 sm:py-32 relative overflow-hidden">
+  
+  <!-- Glows ambientales amplios en esquinas -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+  <!-- Contenedor Cinematográfico Extendido (Aprovecha la pantalla completa en PC) -->
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
+    
+    <!-- Encabezado de la Sección -->
+    <div class="text-center mb-16 sm:mb-24">
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.28em] text-[#A78BFA] uppercase block mb-3">
+        Curaduría Sonora & Formatos
+      </span>
+      <h2 class="section-title !mb-4">
+        SETS & GALERÍA
+      </h2>
+      <div class="mx-auto w-36 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-5"></div>
+      <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg font-light">
+        Cuatro conceptos de sesión diseñados a medida para adaptarse al pulso de cada espacio y momento.
+      </p>
+    </div>
+
+    <!-- Grid 4 en una fila en desktop (xl:grid-cols-4), 2 en tablet (md:grid-cols-2) y 1 en móvil -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 [perspective:1400px]">
+      {sets.map((set) => (
+        <article 
+          class="tilt-card relative bg-[#13131A] border border-white/[0.08] hover:border-purple-500/40 rounded-3xl p-5 sm:p-6 transition-all duration-300 shadow-2xl flex flex-col justify-between group overflow-hidden will-change-transform"
+          data-tilt
+        >
+          <!-- Glare dinámico que sigue el cursor en PC -->
+          <div class="card-glare absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 rounded-3xl z-30"></div>
+
+          <div class="relative z-10 flex flex-col flex-grow">
+            <!-- Contenedor de Imagen Cuadrada (1:1) Perfecto para las portadas 627x627 -->
+            <div class="aspect-square w-full rounded-2xl overflow-hidden relative mb-5 bg-black shadow-inner">
+              <img 
+                src={set.image} 
+                alt={set.title} 
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                loading="lazy"
+                width="627"
+                height="627"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+
+              <!-- Badges Flotantes sobre la portada (Pills compactas) -->
+              <div class="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5 z-20">
+                {set.badges.map((badge) => (
+                  <span class="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-bold tracking-wider uppercase bg-[#14141E]/90 backdrop-blur-md text-white/95 rounded-full border border-white/15 shadow-sm">
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Fila Superior: Subcategoría numerada y Status Dot -->
+            <div class="flex items-center justify-between text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-1.5 gap-2">
+              <span class="text-[#A78BFA] truncate">
+                {set.category}
+              </span>
+              <span class="text-gray-300 flex items-center gap-1.5 normal-case font-medium text-[11px] sm:text-xs flex-shrink-0">
+                <span class={`w-1.5 h-1.5 rounded-full ${set.dotColor} animate-pulse`}></span>
+                {set.venueTag}
+              </span>
+            </div>
+
+            <!-- Título del Formato -->
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mt-0.5 mb-2 group-hover:text-purple-200 transition-colors">
+              {set.title}
+            </h3>
+
+            <!-- Descripción de la sesión -->
+            <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed flex-grow">
+              {set.description}
+            </p>
+          </div>
+
+          <!-- Barra de Reproductor SoundCloud -->
+          <div class="mt-6 pt-2 relative z-10">
+            <div class="bg-[#0B0B10] border border-white/10 group-hover:border-purple-500/30 rounded-2xl p-3 flex items-center justify-between gap-3 transition-colors">
+              
+              <!-- Botón Play Cuadrado Redondeado y Título del Mix -->
+              <div class="flex items-center gap-2.5 min-w-0">
+                <button 
+                  class="toggle-player-btn w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-700 to-[#8B5CF6] hover:from-purple-600 hover:to-[#9D75F8] text-white flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all hover:scale-105 active:scale-95"
+                  aria-label={`Reproducir ${set.trackTitle}`}
+                  data-target={`player-${set.id}`}
+                >
+                  <svg class="w-3.5 h-3.5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <div class="min-w-0">
+                  <h4 class="text-xs font-bold text-white truncate">
+                    {set.trackTitle}
+                  </h4>
+                  <p class="text-[10px] text-gray-400 truncate">
+                    {set.trackMeta}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Enlace / Acción a la derecha -->
+              <a 
+                href={set.actionLink} 
+                target={set.actionLink.startsWith('#') ? '_self' : '_blank'}
+                rel={set.actionLink.startsWith('#') ? '' : 'noopener noreferrer'}
+                class="flex-shrink-0 text-[11px] font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+              >
+                <span class="hidden sm:inline lg:hidden 2xl:inline">{set.actionText}</span>
+                <span class="text-xs transition-transform group-hover:translate-x-1">&rarr;</span>
+              </a>
+
+            </div>
+
+            <!-- Contenedor Desplegable del Widget Oficial de SoundCloud -->
+            <div id={`player-${set.id}`} class="soundcloud-container hidden mt-3 rounded-2xl overflow-hidden border border-purple-500/40 shadow-2xl transition-all duration-300">
+              <iframe 
+                width="100%" 
+                height="166" 
+                scrolling="no" 
+                frameborder="no" 
+                allow="autoplay" 
+                src={set.soundCloudUrl}
+                class="w-full bg-[#1A1A22]"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // 1. Toggle del reproductor interactivo de SoundCloud
+  const playerButtons = document.querySelectorAll('.toggle-player-btn');
+  playerButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      if (!targetId) return;
+      const targetContainer = document.getElementById(targetId);
+      if (targetContainer) {
+        targetContainer.classList.toggle('hidden');
+      }
+    });
+  });
+
+  // 2. Efecto 3D Tilt sutil en PC (solo dispositivos con ratón físico / hover)
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+  if (!isTouchDevice) {
+    const cards = document.querySelectorAll<HTMLElement>('.tilt-card');
+
+    cards.forEach((card) => {
+      const glare = card.querySelector<HTMLElement>('.card-glare');
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -5; // max 5 grados
+        const rotateY = ((x - centerX) / centerX) * 5;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+
+        if (glare) {
+          glare.style.opacity = '1';
+          glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(139, 92, 246, 0.15) 0%, transparent 60%)`;
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        if (glare) {
+          glare.style.opacity = '0';
+        }
+      });
+    });
+  }
+</script>

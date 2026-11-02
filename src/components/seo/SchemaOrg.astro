@@ -1,0 +1,136 @@
+---
+export interface Props {
+  includeMusicRecording?: boolean;
+}
+
+const { includeMusicRecording = false } = Astro.props;
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.aldodeejay.com/#person",
+      "name": "Aldo",
+      "alternateName": ["Aldo Deejay", "Aldo Producer"],
+      "url": "https://www.aldodeejay.com",
+      "image": "https://www.aldodeejay.com/imagenes/silueta.webp",
+      "jobTitle": ["DJ Profesional", "Productor Musical"],
+      "description": "DJ y productor musical afincado en Fuerteventura, especializado en ambientación sonora elegante, Afro House, ritmos latinos y música de baile.",
+      "sameAs": [
+        "https://www.instagram.com/aldodeejay",
+        "https://open.spotify.com",
+        "https://soundcloud.com"
+      ]
+    },
+    {
+      "@type": ["EntertainmentBusiness", "LocalBusiness"],
+      "@id": "https://www.aldodeejay.com/#business",
+      "name": "Aldo Deejay - VIP CRAB EVENTS, S.L.U.",
+      "legalName": "VIP CRAB EVENTS, S.L.U.",
+      "url": "https://www.aldodeejay.com",
+      "logo": "https://www.aldodeejay.com/imagenes/Logo.DJ.png",
+      "image": "https://www.aldodeejay.com/imagenes/silueta.webp",
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tuineje, Fuerteventura",
+        "addressRegion": "Las Palmas, Canarias",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Fuerteventura" },
+        { "@type": "Place", "name": "Lanzarote" },
+        { "@type": "Place", "name": "Islas Canarias" }
+      ],
+      "founder": {
+        "@id": "https://www.aldodeejay.com/#person"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Formatos y Sesiones DJ",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Poolside Vibes (Hoteles y Terrazas)",
+              "description": "Música chill, organic house y ritmos relajados para piscinas y tardes de sunset."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bodas y Eventos Privados",
+              "description": "Música cuidada y personalizada para cada momento de la celebración."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Clubbing & Noches",
+              "description": "Sets con energía para pista de baile, música comercial, ritmos latinos y afro house."
+            }
+          }
+        ]
+      }
+    },
+    ...(includeMusicRecording ? [
+      {
+        "@type": "MusicRecording",
+        "@id": "https://www.aldodeejay.com/creep/#recording",
+        "name": "Creep (Afro House Cover)",
+        "byArtist": {
+          "@id": "https://www.aldodeejay.com/#person"
+        },
+        "genre": ["Afro House", "Electronic Dance Music"],
+        "recordLabel": "CD Baby",
+        "url": "https://www.aldodeejay.com/creep",
+        "description": "Primer lanzamiento oficial de Aldo como productor: cover Afro House de 'Creep'."
+      }
+    ] : []),
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.aldodeejay.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde actúa habitualmente Aldo Deejay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Principalmente en Fuerteventura, con desplazamientos habituales a Lanzarote. Para el resto de las Islas Canarias se valoran eventos según formato e interés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué estilo de música pinchas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Me adapto al ambiente: sesiones de tarde relajadas junto a la piscina con Organic House y ritmos suaves, y noches con ritmo latino, Afro House o clásicos de fiesta para mantener la pista animada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dispones de equipo de sonido e iluminación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, a través de VIP CRAB EVENTS, S.L.U. podemos aportar equipo de sonido e iluminación profesional acorde al tamaño del espacio y número de invitados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se formaliza la contratación con contrato y factura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todo se gestiona de forma legal a través de la sociedad VIP CRAB EVENTS, S.L.U., con contrato claro y factura oficial."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
