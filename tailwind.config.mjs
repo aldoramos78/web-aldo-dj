@@ -18,7 +18,8 @@ export default {
       },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],
-        display: ['Outfit', 'sans-serif']
+        display: ['Outfit', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif']
       },
       boxShadow: {
         'neon': '0 0 25px rgba(139, 92, 246, 0.45)',
