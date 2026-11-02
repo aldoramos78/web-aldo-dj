@@ -2,24 +2,24 @@
 ---
 <section id="hero" class="relative w-full min-h-[100svh] lg:h-[100dvh] lg:max-h-[100dvh] flex flex-col justify-between items-center overflow-hidden pt-16 sm:pt-20 lg:pt-20 pb-0">
   
-  <!-- ISOTIPO GIGANTE A PANTALLA COMPLETA EN BLANCO SÓLIDO (Visible en z-0 con presencia monumental) -->
-  <div class="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[580px] md:w-[740px] lg:w-[880px] xl:w-[980px] aspect-square flex items-center justify-center pointer-events-none z-0 opacity-60 lg:opacity-65 select-none">
-    <!-- Halo suave de resplandor morado ambiental -->
-    <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(168,85,247,0.35)_0%,rgba(59,130,246,0.15)_45%,transparent_70%)] blur-3xl"></div>
+  <!-- ISOTIPO BLANCO BRILLO AJUSTADO AL HERO (Sin grisáceos, luminosidad máxima 95% y ajustado con viewport height) -->
+  <div class="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[52vh] sm:h-[62vh] lg:h-[68vh] max-h-[640px] aspect-square flex items-center justify-center pointer-events-none z-0 opacity-90 lg:opacity-95 select-none">
+    <!-- Halo de resplandor ambiental neón morado/cian -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(168,85,247,0.45)_0%,rgba(59,130,246,0.2)_40%,transparent_70%)] blur-3xl"></div>
     
-    <!-- Imagen del Isotipo en Blanco Puro Gigante -->
+    <!-- Imagen del Isotipo en Blanco Puro Brillante (Zero grisáceo, triple drop-shadow ultra nítido) -->
     <img 
       src="/imagenes/Iso.DJ.png" 
       alt="Aldo Deejay Isotipo" 
-      class="w-full h-full object-contain filter brightness-0 invert drop-shadow-[0_0_40px_rgba(255,255,255,0.85)] drop-shadow-[0_0_90px_rgba(168,85,247,0.6)]"
-      width="1080"
-      height="1080"
+      class="w-full h-full object-contain filter brightness-0 invert drop-shadow-[0_0_35px_rgba(255,255,255,1)] drop-shadow-[0_0_75px_rgba(255,255,255,0.75)] drop-shadow-[0_0_110px_rgba(168,85,247,0.7)]"
+      width="900"
+      height="900"
       loading="eager"
     />
   </div>
 
-  <!-- CONTENEDOR PRINCIPAL DEL HERO (Alineado para caber 100% en la pantalla) -->
-  <div class="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center items-center z-10 py-2 sm:py-3 my-auto">
+  <!-- CONTENEDOR PRINCIPAL DEL HERO (Mismo ancho de caja que Sobre Mí: max-w-[1600px] con padding coordinado) -->
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 text-center flex-1 flex flex-col justify-center items-center z-10 py-2 sm:py-3 my-auto">
     
     <!-- Badge de Localización: Fuerteventura • Canary Islands -->
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/75 border border-purple-500/35 backdrop-blur-md mb-2 lg:mb-3 text-[10px] sm:text-xs uppercase tracking-[0.25em] text-gray-300 font-semibold shadow-[0_0_15px_rgba(139,92,246,0.25)]">
@@ -27,15 +27,15 @@
       Fuerteventura &bull; Canary Islands
     </div>
 
-    <!-- H1 Semántico con la Fuente Serif Itálica Editorial en UNA LÍNEA en Web + Efecto Tornasol -->
-    <h1 class="hero-subtitulo font-serif italic font-normal text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-[3.1rem] lg:whitespace-nowrap tracking-wide select-none mb-4 lg:mb-6">
+    <!-- H1 Semántico con la Fuente Serif Itálica en UNA LÍNEA en Web + Ancho de caja de Sobre Mí -->
+    <h1 class="hero-subtitulo font-serif italic font-normal text-2xl sm:text-4xl md:text-5xl lg:text-[2.85rem] xl:text-[3.5rem] lg:whitespace-nowrap tracking-wide select-none mb-3 lg:mb-5 w-full">
       &ldquo;El arte de crear la atm&oacute;sfera perfecta.&rdquo;
     </h1>
 
     <!-- ESCENARIO CENTRAL INTERACTIVO (Telemetría de audio flotando sobre el gran Isotipo) -->
-    <div class="relative w-full max-w-[500px] sm:max-w-[650px] lg:max-w-[760px] flex items-center justify-center my-2 lg:my-3 select-none">
+    <div class="relative w-full max-w-[500px] sm:max-w-[650px] lg:max-w-[760px] flex items-center justify-center my-1 lg:my-2 select-none">
       
-      <!-- NODOS ORBITALES EN DESKTOP / TABLET (Con luz intermitente en los 3) -->
+      <!-- NODOS ORBITALES EN DESKTOP / TABLET (Con baliza intermitente activa) -->
       
       <!-- Nodo 1: Izquierda (Sunset Afro House con luz intermitente ámbar) -->
       <div class="hidden sm:flex flex-col items-end absolute -left-10 lg:-left-16 xl:-left-20 top-1/2 -translate-y-1/2 z-20 group">
@@ -173,7 +173,7 @@
       </div>
     </div>
 
-    <!-- ÚNICO CTA CENTRADO (Eliminado Reservar Fecha) -->
+    <!-- ÚNICO CTA CENTRADO -->
     <div class="mt-3 lg:mt-4 flex items-center justify-center w-full">
       <a 
         href="#sets" 
