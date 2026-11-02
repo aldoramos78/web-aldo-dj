@@ -10,9 +10,9 @@ export interface Props {
 
 const {
   title = "ALDO DEEJAY | DJ para Hoteles, Bodas y Eventos en Fuerteventura y Canarias",
-  description = "Sesiones DJ con identidad, estética cuidada y sonido profesional para hoteles, terrazas, bodas y eventos privados en Fuerteventura, Lanzarote y Canarias. Respaldado por VIP CRAB EVENTS, S.L.U.",
+  description = "Sesiones DJ con identidad, estética cuidada y sonido profesional para hoteles, terrazas, bodas y eventos en Fuerteventura y Canarias. Respaldado por VIP CRAB EVENTS, S.L.U.",
   canonical = Astro.url.href,
-  ogImage = "https://www.aldodeejay.com/imagenes/silueta.webp",
+  ogImage = "https://www.aldodeejay.com/imagenes/og-card.jpg",
   ogType = "website",
   noindex = false
 } = Astro.props;
@@ -41,21 +41,27 @@ const siteName = "Aldo Deejay";
 <meta name="language" content="Spanish" />
 <meta name="author" content="Aldo Deejay / VIP CRAB EVENTS, S.L.U." />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
 <meta property="og:type" content={ogType} />
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:secure_url" content={ogImage} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="ALDO DEEJAY - Música y Sesiones DJ en Fuerteventura y Canarias" />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content="es_ES" />
 
-<!-- Twitter Card -->
+<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={canonical} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content="ALDO DEEJAY - Música y Sesiones DJ en Fuerteventura y Canarias" />
 
 <!-- Theme Color -->
 <meta name="theme-color" content="#0D0D11" />
