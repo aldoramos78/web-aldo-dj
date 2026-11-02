@@ -39,17 +39,20 @@ const formats = [
 ];
 ---
 
-<section id="showcase" class="py-20 sm:py-28 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 sm:mb-16">
+<section id="showcase" class="py-12 sm:py-20 lg:py-28 relative overflow-hidden">
+  <!-- Contenedor Cinematográfico Extendido (w-full max-w-[1600px] como el resto) -->
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
+    
+    <!-- Encabezado con margen inferior generoso para que no se pegue a las tarjetas en móvil ni PC -->
+    <div class="text-center mb-10 sm:mb-14 lg:mb-16">
       <span class="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#A78BFA] uppercase block mb-3">
         Espectáculos Especiales
       </span>
       <h2 class="section-title !mb-4">
         SHOWCASE
       </h2>
-      <div class="mx-auto w-36 h-[3px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-5"></div>
-      <p class="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg font-light">
+      <div class="mx-auto w-36 h-[3px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-4"></div>
+      <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg font-light">
         Formatos y espectáculos especiales con puesta en escena propia.
       </p>
     </div>
@@ -57,13 +60,13 @@ const formats = [
     <!-- Coverflow Component Container -->
     <div class="relative w-full flex flex-col items-center">
       
-      <!-- 3D Viewport -->
-      <div class="coverflow-wrapper relative w-full h-[360px] sm:h-[450px] flex items-center justify-center [perspective:1000px] select-none touch-pan-y">
+      <!-- 3D Viewport con altura holgada para que no se monte nada -->
+      <div class="coverflow-wrapper relative w-full h-[400px] sm:h-[480px] lg:h-[530px] flex items-center justify-center [perspective:1200px] select-none touch-pan-y">
         
         <!-- Flecha Anterior (Solo Escritorio) -->
         <button 
           id="coverflow-prev" 
-          class="hidden sm:flex absolute left-4 z-40 w-12 h-12 rounded-full bg-black/60 border border-purple-500/40 text-white items-center justify-center hover:bg-purple-600/80 hover:border-purple-400 transition-all shadow-lg backdrop-blur-md"
+          class="hidden lg:flex absolute left-6 xl:left-12 z-40 w-12 h-12 rounded-full bg-black/70 border border-purple-500/40 text-white items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all shadow-[0_0_20px_rgba(139,92,246,0.4)] backdrop-blur-md"
           aria-label="Anterior Formato"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -94,26 +97,26 @@ const formats = [
         <!-- Flecha Siguiente (Solo Escritorio) -->
         <button 
           id="coverflow-next" 
-          class="hidden sm:flex absolute right-4 z-40 w-12 h-12 rounded-full bg-black/60 border border-purple-500/40 text-white items-center justify-center hover:bg-purple-600/80 hover:border-purple-400 transition-all shadow-lg backdrop-blur-md"
+          class="hidden lg:flex absolute right-6 xl:right-12 z-40 w-12 h-12 rounded-full bg-black/70 border border-purple-500/40 text-white items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all shadow-[0_0_20px_rgba(139,92,246,0.4)] backdrop-blur-md"
           aria-label="Siguiente Formato"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </button>
       </div>
 
-      <!-- Information & Action Card for Active Format -->
-      <div class="mt-6 w-full max-w-xl text-center glass-panel rounded-2xl p-6 border border-purple-500/20 shadow-xl">
+      <!-- Tarjeta de Información y Acción Separada Holgadamente de los Carteles -->
+      <div class="mt-10 sm:mt-14 lg:mt-16 w-full max-w-xl text-center glass-panel rounded-2xl p-6 sm:p-7 border border-purple-500/20 shadow-xl relative z-30">
         <h3 id="showcase-title" class="text-xl sm:text-2xl font-bold text-white tracking-wide uppercase">
           {formats[0].title}
         </h3>
-        <p id="showcase-desc" class="text-sm text-gray-300 font-light mt-2 min-h-[48px] leading-relaxed">
+        <p id="showcase-desc" class="text-sm sm:text-base text-gray-300 font-light mt-2 min-h-[48px] leading-relaxed">
           {formats[0].desc}
         </p>
         <div class="mt-4 flex items-center justify-center gap-3">
           <a 
             id="showcase-cta"
             href="#contact" 
-            class="btn-primary text-xs !py-2.5 !px-6"
+            class="btn-primary text-xs sm:text-sm !py-2.5 !px-6"
           >
             Consultar Este Formato
           </a>
@@ -126,43 +129,89 @@ const formats = [
 
 <style>
   .coverflow-item {
-    width: 280px;
+    width: 250px;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease, filter 0.3s ease;
   }
   @media (min-width: 640px) {
     .coverflow-item {
-      width: 330px;
+      width: 310px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .coverflow-item {
+      width: 350px;
     }
   }
 
-  /* 3D transforms */
+  /* 3D transforms - Mobile first: compacto y centrado */
   .coverflow-item.active {
-    transform: translateZ(90px) scale(1.08);
+    transform: translateZ(90px) scale(1.05);
     opacity: 1;
     z-index: 50;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 30px rgba(139,92,246,0.5);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.85), 0 0 35px rgba(139,92,246,0.5);
     border: 2px solid #8B5CF6;
   }
   .coverflow-item.prev-1 {
-    transform: translateX(-55%) translateZ(-90px) rotateY(28deg);
+    transform: translateX(-52%) translateZ(-80px) rotateY(28deg);
     opacity: 0.6;
     z-index: 30;
   }
   .coverflow-item.next-1 {
-    transform: translateX(55%) translateZ(-90px) rotateY(-28deg);
+    transform: translateX(52%) translateZ(-80px) rotateY(-28deg);
     opacity: 0.6;
     z-index: 30;
   }
   .coverflow-item.prev-2 {
-    transform: translateX(-100%) translateZ(-220px) rotateY(40deg);
+    transform: translateX(-95%) translateZ(-190px) rotateY(40deg);
     opacity: 0.25;
     z-index: 20;
   }
   .coverflow-item.next-2 {
-    transform: translateX(100%) translateZ(-220px) rotateY(-40deg);
+    transform: translateX(95%) translateZ(-190px) rotateY(-40deg);
     opacity: 0.25;
     z-index: 20;
   }
+
+  /* Desktop 1024px+: Tarjetas más abiertas manteniendo el efecto curvo */
+  @media (min-width: 1024px) {
+    .coverflow-item.prev-1 {
+      transform: translateX(-82%) translateZ(-75px) rotateY(32deg);
+      opacity: 0.75;
+    }
+    .coverflow-item.next-1 {
+      transform: translateX(82%) translateZ(-75px) rotateY(-32deg);
+      opacity: 0.75;
+    }
+    .coverflow-item.prev-2 {
+      transform: translateX(-155%) translateZ(-180px) rotateY(44deg);
+      opacity: 0.4;
+    }
+    .coverflow-item.next-2 {
+      transform: translateX(155%) translateZ(-180px) rotateY(-44deg);
+      opacity: 0.4;
+    }
+  }
+
+  /* Large Desktop 1400px+: Máxima apertura cinematográfica curva */
+  @media (min-width: 1400px) {
+    .coverflow-item.prev-1 {
+      transform: translateX(-96%) translateZ(-65px) rotateY(32deg);
+      opacity: 0.8;
+    }
+    .coverflow-item.next-1 {
+      transform: translateX(96%) translateZ(-65px) rotateY(-32deg);
+      opacity: 0.8;
+    }
+    .coverflow-item.prev-2 {
+      transform: translateX(-182%) translateZ(-170px) rotateY(45deg);
+      opacity: 0.45;
+    }
+    .coverflow-item.next-2 {
+      transform: translateX(182%) translateZ(-170px) rotateY(-45deg);
+      opacity: 0.45;
+    }
+  }
+
   .coverflow-item.hidden-item {
     transform: translateZ(-350px);
     opacity: 0;

@@ -1,6 +1,6 @@
 ---
 ---
-<section id="hero" class="relative min-h-[100dvh] w-full flex flex-col justify-center items-center overflow-hidden pt-20 pb-12">
+<section id="hero" class="relative min-h-[100dvh] w-full flex flex-col justify-center items-center overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12">
   
   <!-- Logo Iso de Fondo (Parallax vertical suave) -->
   <div id="hero-iso-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-25 lg:opacity-20 transition-transform duration-75 will-change-transform">
@@ -17,12 +17,12 @@
   </div>
 
   <!-- Contenido y Jerarquía SEO H1: Centrado en viewport completo (100dvh) -->
-  <div class="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 text-center my-auto py-6 sm:py-10">
+  <div class="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 text-center my-auto py-4 sm:py-8">
     
-    <!-- Badge de Localización -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md mb-6 sm:mb-8 text-xs sm:text-sm uppercase tracking-[0.28em] text-gray-300 font-bold">
+    <!-- Badge de Localización: Fuerteventura • Canarias -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md mb-5 sm:mb-8 text-xs sm:text-sm uppercase tracking-[0.28em] text-gray-300 font-bold">
       <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      Fuerteventura &bull; Lanzarote &bull; Canarias
+      Fuerteventura &bull; Canarias
     </div>
 
     <!-- H1 Semántico Brutalista de Alto Impacto -->
@@ -30,18 +30,18 @@
       ALDO DEEJAY
     </h1>
 
-    <!-- Subtítulo de Servicios (Potente, legible y contundente) -->
-    <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/80 mt-4 sm:mt-6 max-w-5xl mx-auto leading-tight">
+    <!-- Subtítulo de Servicios: Efecto Cristal / Reflejo Tornasol Morado Neón -->
+    <h2 class="hero-subtitulo text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mt-4 sm:mt-6 max-w-5xl mx-auto leading-tight">
       Música & Sesiones DJ para Hoteles, Bodas y Eventos
     </h2>
 
     <!-- Bajada descriptiva brutalista -->
-    <p class="max-w-3xl mx-auto mt-6 sm:mt-8 text-base sm:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
+    <p class="max-w-3xl mx-auto mt-5 sm:mt-8 text-sm sm:text-lg lg:text-xl text-gray-300 font-light leading-relaxed">
       Elegancia, estética y atmósfera: desde el groove envolvente de un atardecer junto al mar hasta el pulso dinámico de la pista de baile.
     </p>
 
     <!-- CTAs de Conversión Brutalistas -->
-    <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+    <div class="mt-7 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
       <a href="#sets" class="btn-primary w-full sm:w-auto text-sm sm:text-base font-bold tracking-wider px-9 py-4 shadow-[0_0_30px_rgba(139,92,246,0.6)]">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
@@ -56,6 +56,45 @@
 
   </div>
 </section>
+
+<style>
+  /* Efecto tornasol / cristal prismático en tonos morados y plata */
+  .hero-subtitulo {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F3E8FF 20%, #C084FC 45%, #E879F9 68%, #A855F7 85%, #FFFFFF 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 14px rgba(168, 85, 247, 0.45));
+    animation: tornasol-shine 7s ease-in-out infinite alternate;
+  }
+
+  @keyframes tornasol-shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+</style>
+
+<script>
+  // Parallax Vertical Puro para el Isotipo (sin rotación 3D para máxima fluidez)
+  const isoBg = document.getElementById('hero-iso-container');
+  if (isoBg) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          isoBg.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.35}px))`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+</script>
 
 <script>
   // Parallax Vertical Puro para el Isotipo (sin rotación 3D para máxima fluidez)
