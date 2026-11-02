@@ -60,6 +60,77 @@ const {
 
     <Footer />
 
+    <!-- Botón Subir Elegante con Tornasol H2 y Morado Blur -->
+    <button
+      id="back-to-top"
+      aria-label="Volver arriba"
+      class="fixed bottom-6 right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out group focus:outline-none"
+    >
+      <!-- Halo exterior morado blur sutil que no invade la flecha -->
+      <div class="tornasol-glow absolute -inset-1.5 rounded-full blur-md opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+      <!-- Anillo exterior con el efecto tornasol del H2 -->
+      <div class="tornasol-ring relative w-full h-full rounded-full p-[2px] transition-transform duration-300 group-hover:scale-105 active:scale-95 shadow-2xl">
+        <!-- Disco interior oscuro semitransparente para máximo contraste de la flecha -->
+        <div class="w-full h-full rounded-full bg-[#0D0D11]/90 backdrop-blur-md flex items-center justify-center">
+          <svg 
+            class="w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-300 group-hover:-translate-y-1" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </div>
+      </div>
+    </button>
+
+    <style is:global>
+      /* Anillo exterior con gradiente tornasol idéntico al H2 */
+      .tornasol-ring {
+        background: linear-gradient(135deg, #FFFFFF 0%, #F3E8FF 20%, #C084FC 45%, #E879F9 68%, #A855F7 85%, #FFFFFF 100%);
+        background-size: 240% 240%;
+        animation: tornasol-shine 6s ease-in-out infinite alternate;
+      }
+
+      /* Halo exterior con resplandor morado difuminado */
+      .tornasol-glow {
+        background: radial-gradient(circle, rgba(168, 85, 247, 0.7) 0%, rgba(192, 132, 252, 0.35) 45%, transparent 75%);
+      }
+
+      @keyframes tornasol-shine {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+    </style>
+
+    <!-- Script de Scroll para Botón Subir -->
+    <script>
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 350) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          } else {
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    </script>
+
     <!-- Script de Partículas Condicional y Ligero -->
     <script>
       const canvas = document.getElementById('particles-bg') as HTMLCanvasElement | null;
