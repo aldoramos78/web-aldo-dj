@@ -1,9 +1,9 @@
 ---
 ---
 <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0D0D11]/85 backdrop-blur-md border-b border-white/5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <div class="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-20 flex items-center justify-between">
     <!-- Brand Logo -->
-    <a href="/#hero" class="flex items-center gap-2 group">
+    <a href="/#hero" class="flex items-center gap-2 group z-10">
       <img 
         src="/imagenes/Logo.DJ.Blanco.png" 
         alt="Aldo Deejay Logo" 
@@ -13,23 +13,23 @@
       />
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-8">
-      <a href="/#hero" class="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Inicio</a>
-      <a href="/#about" class="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Sobre Mí</a>
-      <a href="/creep" class="text-sm uppercase tracking-wider text-purple-400 font-semibold hover:text-purple-300 transition-colors flex items-center gap-1.5">
-        <span class="inline-block w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-        Nuevo: Creep
+    <!-- Desktop Navigation: Centrado matemáticamente respecto al 100% del ancho de la página -->
+    <nav class="hidden md:flex items-center gap-5 lg:gap-7 absolute left-1/2 -translate-x-1/2 z-10">
+      <a href="/#hero" class="nav-link">Inicio</a>
+      <a href="/#about" class="nav-link">Sobre Mí</a>
+      <a href="/#sets" class="nav-link">Sets & Galería</a>
+      <a href="/#showcase" class="nav-link">Showcase</a>
+      <a href="/#faq" class="nav-link">FAQ</a>
+      <a href="/creep" class="nav-link nav-link--highlight flex items-center gap-1.5">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+        <span>Nuevo Single: Creep</span>
       </a>
-      <a href="/#sets" class="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Sets & Galería</a>
-      <a href="/#showcase" class="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">Showcase</a>
-      <a href="/#faq" class="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">FAQ</a>
     </nav>
 
-    <!-- Header CTA & Mobile Toggle -->
-    <div class="flex items-center gap-4">
+    <!-- Header Right Area: CTA y Mobile Toggle -->
+    <div class="flex items-center gap-3 sm:gap-4 z-10">
       <a href="/#contact" class="hidden sm:inline-flex btn-primary text-xs !py-2.5 !px-5">
-        Consultar Fecha
+        RESERVAR FECHA
       </a>
 
       <!-- Mobile Hamburger -->
@@ -51,20 +51,62 @@
   <div id="mobile-menu" class="hidden md:hidden bg-[#0D0D11]/95 backdrop-blur-xl border-b border-purple-500/20 px-6 py-6 space-y-4">
     <a href="/#hero" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Inicio</a>
     <a href="/#about" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Sobre Mí</a>
-    <a href="/creep" class="mobile-link block text-base uppercase tracking-wider text-purple-400 font-semibold flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-      Nuevo Lanzamiento: Creep
-    </a>
     <a href="/#sets" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Sets & Galería</a>
     <a href="/#showcase" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Showcase</a>
     <a href="/#faq" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">FAQ</a>
+    <a href="/creep" class="mobile-link block text-base uppercase tracking-wider text-purple-400 font-semibold flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+      Nuevo Single: Creep
+    </a>
     <div class="pt-4 border-t border-white/10">
       <a href="/#contact" class="mobile-link btn-primary w-full text-center text-sm">
-        Solicitar Presupuesto
+        RESERVAR FECHA
       </a>
     </div>
   </div>
 </header>
+
+<style>
+  .nav-link {
+    position: relative;
+    padding-block: 0.35rem;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #d1d5db;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-link:hover {
+    color: #ffffff;
+  }
+  /* Subrayado neón morado difuminado en las esquinas */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b5cf6 30%, #c084fc 50%, #8b5cf6 70%, transparent);
+    transform: translateX(-50%);
+    border-radius: 9999px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.9);
+    transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+    opacity: 0;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+  .nav-link--highlight {
+    color: #c084fc;
+    font-weight: 600;
+  }
+  .nav-link--highlight:hover {
+    color: #e9d5ff;
+  }
+</style>
 
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');

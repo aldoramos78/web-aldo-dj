@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/hero/Hero.astro';
+import TeaserPlayer from '../components/TeaserPlayer.astro';
 import About from '../components/about/About.astro';
-import CreepTeaser from '../components/music/CreepTeaser.astro';
 import SetsGallery from '../components/sets/SetsGallery.astro';
 import ShowcaseCoverflow from '../components/showcase/ShowcaseCoverflow.astro';
+import CreepTeaser from '../components/music/CreepTeaser.astro';
 import FAQ from '../components/faq/FAQ.astro';
 import Contact from '../components/contact/Contact.astro';
 ---
@@ -15,11 +16,13 @@ import Contact from '../components/contact/Contact.astro';
   ogImage="https://www.aldodeejay.com/imagenes/og-card.jpg"
 >
   <main>
-    <Hero />
+    <Hero headerHeight="5rem">
+      <TeaserPlayer src="/audio/creep-teaser.mp3" />
+    </Hero>
     <About />
-    <CreepTeaser />
     <SetsGallery />
     <ShowcaseCoverflow />
+    <CreepTeaser />
     <FAQ />
     <Contact />
   </main>
