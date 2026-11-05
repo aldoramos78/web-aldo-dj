@@ -215,7 +215,7 @@ const sets = [
   });
 
   // 2. Efecto 3D Tilt sutil en PC (solo dispositivos con ratón físico / hover)
-  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+  const isTouchDevice = window.matchMedia('(hover: none)').matches || 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (!isTouchDevice) {
     const cards = document.querySelectorAll<HTMLElement>('.tilt-card');
 

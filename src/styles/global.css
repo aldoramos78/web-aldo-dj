@@ -35,7 +35,7 @@ html {
   overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
@@ -69,12 +69,24 @@ body {
   }
 }
 
-/* Glassmorphism utility */
+/* Optimización de rendimiento móvil: aislar pintado de secciones fuera de pantalla */
+section:not(#hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Glassmorphism utility optimizado: opaco sutil en móvil para 60/120 FPS sin repintado de desenfoque continuo */
 .glass-panel {
-  background: rgba(26, 26, 34, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(26, 26, 34, 0.92);
   border: 1px solid rgba(226, 232, 240, 0.08);
+}
+
+@media (min-width: 768px) {
+  .glass-panel {
+    background: rgba(26, 26, 34, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
 }
 
 /* Botón estilo primario Clubbing */

@@ -458,11 +458,21 @@ const bandB = [
   }
   .band--b .band__item { font-weight: 600; opacity: 0.85; }
   .glyph {
-    width: 0.85em;
-    aspect-ratio: 3399 / 3133;
+    width: 0.65em;
+    height: 0.65em;
+    display: inline-block;
     background: currentColor;
-    -webkit-mask: var(--iso) center / contain no-repeat;
-    mask: var(--iso) center / contain no-repeat;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+  @media (min-width: 768px) {
+    .glyph {
+      width: 0.85em;
+      height: auto;
+      aspect-ratio: 3399 / 3133;
+      clip-path: none;
+      -webkit-mask: var(--iso) center / contain no-repeat;
+      mask: var(--iso) center / contain no-repeat;
+    }
   }
 
   /* — Tablet y escritorio: título a la izquierda, iso a la derecha — */

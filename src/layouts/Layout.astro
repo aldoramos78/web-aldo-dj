@@ -39,7 +39,8 @@ const {
     />
     <SchemaOrg includeMusicRecording={includeMusicRecording} />
   </head>
-  <body class="bg-[#0D0D11] text-white font-sans antialiased selection:bg-purple-600 selection:text-white">
+  <body class="bg-[#0D0D11] text-white font-sans antialiased selection:bg-purple-600 selection:text-white relative">
+    <div id="top-sentinel" class="absolute top-0 left-0 w-full h-[350px] pointer-events-none -z-50" aria-hidden="true"></div>
     <Header />
 
     <slot />
@@ -91,24 +92,27 @@ const {
       }
     </style>
 
-    <!-- Script de Scroll para Botón Subir -->
+    <!-- Script Optimizado con IntersectionObserver (Zero eventos scroll en hilo principal) -->
     <script>
       const backToTopBtn = document.getElementById('back-to-top');
-      if (backToTopBtn) {
-        let isVisible = false;
-        window.addEventListener('scroll', () => {
-          const shouldBeVisible = window.scrollY > 350;
-          if (shouldBeVisible !== isVisible) {
-            isVisible = shouldBeVisible;
-            if (isVisible) {
+      const sentinel = document.getElementById('top-sentinel');
+
+      if (backToTopBtn && sentinel && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0];
+            if (!entry.isIntersecting) {
               backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
               backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
             } else {
               backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
               backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
             }
-          }
-        }, { passive: true });
+          },
+          { threshold: 0 }
+        );
+
+        observer.observe(sentinel);
 
         backToTopBtn.addEventListener('click', () => {
           window.scrollTo({
