@@ -48,14 +48,14 @@ body {
   color: var(--texto-principal);
 }
 
-/* Títulos principales con estética Brutalista: Grandes, contundentes y responsivos */
+/* Títulos principales con estética Brutalista: Grandes, contundentes y totalmente adaptativos */
 .section-title {
-  font-size: clamp(2.5rem, 5vw + 1rem, 5.25rem);
+  font-size: clamp(2.85rem, 6vw + 1rem, 6rem);
   font-weight: 900;
   line-height: 0.95;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: var(--texto-principal);
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: -0.035em;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
@@ -63,9 +63,9 @@ body {
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 3.75rem);
     margin-bottom: 1.25rem;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
   }
 }
 

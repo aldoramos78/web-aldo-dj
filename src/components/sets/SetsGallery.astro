@@ -74,20 +74,20 @@ const sets = [
     
     <!-- Encabezado de la Sección -->
     <div class="text-center mb-16 sm:mb-24">
-      <span class="text-xs sm:text-sm font-semibold tracking-[0.28em] text-[#A78BFA] uppercase block mb-3">
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.28em] text-[#C4B5FD] uppercase block mb-3">
         Curaduría Sonora & Formatos
       </span>
       <h2 class="section-title !mb-4">
         SETS & GALERÍA
       </h2>
       <div class="mx-auto w-36 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-5"></div>
-      <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg font-light">
+      <p class="text-white/95 max-w-2xl mx-auto text-base sm:text-lg font-normal leading-relaxed">
         Cuatro conceptos de sesión diseñados a medida para adaptarse al pulso de cada espacio y momento.
       </p>
     </div>
 
     <!-- Grid 4 en una fila en desktop (xl:grid-cols-4), 2 en tablet (md:grid-cols-2) y 1 en móvil -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 [perspective:1400px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 md:[perspective:1400px]">
       {sets.map((set) => (
         <article 
           class="tilt-card relative bg-[#13131A] border border-white/[0.08] hover:border-purple-500/40 rounded-3xl p-5 sm:p-6 transition-all duration-300 shadow-2xl flex flex-col justify-between group overflow-hidden will-change-transform"
@@ -109,10 +109,10 @@ const sets = [
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
 
-              <!-- Badges Flotantes sobre la portada (Pills compactas) -->
+              <!-- Badges Flotantes sobre la portada (Pills compactas y legibles) -->
               <div class="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5 z-20">
                 {set.badges.map((badge) => (
-                  <span class="px-2.5 py-0.5 text-[9px] sm:text-[10px] font-bold tracking-wider uppercase bg-[#14141E]/90 backdrop-blur-md text-white/95 rounded-full border border-white/15 shadow-sm">
+                  <span class="px-2.5 py-1 text-[10px] sm:text-xs font-bold tracking-wider uppercase bg-[#14141E]/95 backdrop-blur-md text-white rounded-full border border-white/20 shadow-sm">
                     {badge}
                   </span>
                 ))}
@@ -120,45 +120,45 @@ const sets = [
             </div>
 
             <!-- Fila Superior: Subcategoría numerada y Status Dot -->
-            <div class="flex items-center justify-between text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-1.5 gap-2">
-              <span class="text-[#A78BFA] truncate">
+            <div class="flex items-center justify-between text-xs sm:text-sm font-bold tracking-wider uppercase mb-2 gap-2">
+              <span class="text-purple-300 truncate">
                 {set.category}
               </span>
-              <span class="text-gray-300 flex items-center gap-1.5 normal-case font-medium text-[11px] sm:text-xs flex-shrink-0">
-                <span class={`w-1.5 h-1.5 rounded-full ${set.dotColor} animate-pulse`}></span>
+              <span class="text-white flex items-center gap-1.5 normal-case font-semibold text-xs sm:text-sm flex-shrink-0">
+                <span class={`w-2 h-2 rounded-full ${set.dotColor} animate-pulse`}></span>
                 {set.venueTag}
               </span>
             </div>
 
             <!-- Título del Formato -->
-            <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mt-0.5 mb-2 group-hover:text-purple-200 transition-colors">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-0.5 mb-2 group-hover:text-purple-200 transition-colors">
               {set.title}
             </h3>
 
-            <!-- Descripción de la sesión -->
-            <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed flex-grow">
+            <!-- Descripción de la sesión en Blanco Puro y Tamaño Confortable -->
+            <p class="text-sm sm:text-base text-white font-normal leading-relaxed flex-grow">
               {set.description}
             </p>
           </div>
 
           <!-- Barra de Reproductor SoundCloud -->
           <div class="mt-6 pt-2 relative z-10">
-            <div class="bg-[#0B0B10] border border-white/10 group-hover:border-purple-500/30 rounded-2xl p-3 flex items-center justify-between gap-3 transition-colors">
+            <div class="bg-[#0B0B10] border border-white/15 group-hover:border-purple-500/40 rounded-2xl p-3 flex items-center justify-between gap-3 transition-colors">
               
               <!-- Botón Play Cuadrado Redondeado y Título del Mix -->
               <div class="flex items-center gap-2.5 min-w-0">
                 <button 
-                  class="toggle-player-btn w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-700 to-[#8B5CF6] hover:from-purple-600 hover:to-[#9D75F8] text-white flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all hover:scale-105 active:scale-95"
+                  class="toggle-player-btn w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-700 to-[#8B5CF6] hover:from-purple-600 hover:to-[#9D75F8] text-white flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all hover:scale-105 active:scale-95"
                   aria-label={`Reproducir ${set.trackTitle}`}
                   data-target={`player-${set.id}`}
                 >
-                  <svg class="w-3.5 h-3.5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </button>
                 <div class="min-w-0">
-                  <h4 class="text-xs font-bold text-white truncate">
+                  <h4 class="text-sm font-bold text-white truncate">
                     {set.trackTitle}
                   </h4>
-                  <p class="text-[10px] text-gray-400 truncate">
+                  <p class="text-xs text-purple-200/80 truncate font-mono">
                     {set.trackMeta}
                   </p>
                 </div>
@@ -169,10 +169,10 @@ const sets = [
                 href={set.actionLink} 
                 target={set.actionLink.startsWith('#') ? '_self' : '_blank'}
                 rel={set.actionLink.startsWith('#') ? '' : 'noopener noreferrer'}
-                class="flex-shrink-0 text-[11px] font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+                class="flex-shrink-0 text-xs sm:text-sm font-semibold text-purple-300 hover:text-white transition-colors flex items-center gap-1"
               >
                 <span class="hidden sm:inline lg:hidden 2xl:inline">{set.actionText}</span>
-                <span class="text-xs transition-transform group-hover:translate-x-1">&rarr;</span>
+                <span class="text-sm transition-transform group-hover:translate-x-1">&rarr;</span>
               </a>
 
             </div>

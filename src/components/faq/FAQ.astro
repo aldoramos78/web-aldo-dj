@@ -26,14 +26,14 @@ const faqs = [
 <section id="faq" class="py-5 sm:py-7 lg:py-8 relative">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 sm:mb-16">
-      <span class="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#A78BFA] uppercase block mb-3">
+      <span class="text-xs sm:text-sm font-bold tracking-[0.3em] text-[#C4B5FD] uppercase block mb-3">
         Resolución de Dudas
       </span>
       <h2 class="section-title !mb-4">
         PREGUNTAS FRECUENTES
       </h2>
       <div class="mx-auto w-36 h-[3px] rounded-full bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent shadow-[0_0_16px_rgba(139,92,246,0.9)] mb-5"></div>
-      <p class="text-gray-300 max-w-xl mx-auto text-base sm:text-lg font-light">
+      <p class="text-white max-w-xl mx-auto text-base sm:text-lg font-normal leading-relaxed">
         Claridad y profesionalidad para resolver todas tus dudas
       </p>
     </div>
@@ -42,16 +42,16 @@ const faqs = [
     <div class="space-y-4">
       {faqs.map((faq, index) => (
         <details class="group glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 open:border-purple-500/50 open:shadow-[0_0_20px_rgba(139,92,246,0.25)]">
-          <summary class="flex items-center justify-between p-6 text-left cursor-pointer list-none select-none text-white font-semibold text-base sm:text-lg group-hover:text-purple-300 transition-colors">
+          <summary class="flex items-center justify-between p-6 text-left cursor-pointer list-none select-none text-white font-bold text-lg sm:text-xl group-hover:text-purple-300 transition-colors">
             <span class="flex items-center gap-3">
-              <span class="text-purple-400 font-bold text-sm">0{index + 1}.</span>
+              <span class="text-purple-400 font-extrabold text-base">0{index + 1}.</span>
               {faq.q}
             </span>
             <span class="ml-4 flex-shrink-0 text-purple-400 group-open:rotate-180 transition-transform duration-300">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </span>
           </summary>
-          <div class="px-6 pb-6 pt-1 text-gray-300 text-sm sm:text-base font-light leading-relaxed border-t border-white/5">
+          <div class="px-6 pb-6 pt-2 text-white text-base sm:text-lg font-normal leading-relaxed border-t border-white/10">
             {faq.a}
           </div>
         </details>

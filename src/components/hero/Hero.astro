@@ -65,9 +65,9 @@ const bandB = [
       <div class="stage__horizon"></div>
       <div class="stage__reflect"><div class="iso"></div></div>
 
-      <!-- Botones Flotantes con Balizas Intermitentes (100% responsivos en móvil y PC alrededor del logo) -->
+      <!-- Botones Flotantes con Balizas Intermitentes (Ocultos en móvil para despejar el logo, activos en PC) -->
       <!-- Nodo 1: Izquierda (Sunset Afro House con luz intermitente ámbar) -->
-      <div class="flex flex-col items-end absolute -left-2 sm:-left-6 top-[32%] -translate-y-1/2 z-30 group pointer-events-auto">
+      <div class="hidden sm:flex flex-col items-end absolute -left-2 sm:-left-6 top-[32%] -translate-y-1/2 z-30 group pointer-events-auto">
         <div class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-[#0E0C13]/90 border border-amber-500/50 backdrop-blur-md shadow-[0_0_15px_rgba(251,191,36,0.25)] hover:border-amber-400 transition-colors">
           <span class="relative flex h-1.5 sm:h-2 w-1.5 sm:w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -83,7 +83,7 @@ const bandB = [
       </div>
 
       <!-- Nodo 2: Derecha Arriba (Balearic & Organic con luz intermitente cian) -->
-      <div class="flex flex-col items-start absolute -right-2 sm:-right-2 top-[10%] sm:top-[16%] z-30 group pointer-events-auto">
+      <div class="hidden sm:flex flex-col items-start absolute -right-2 sm:-right-2 top-[10%] sm:top-[16%] z-30 group pointer-events-auto">
         <div class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-[#0E0C13]/90 border border-cyan-500/50 backdrop-blur-md shadow-[0_0_15px_rgba(34,211,238,0.25)] hover:border-cyan-400 transition-colors">
           <span class="relative flex h-1.5 sm:h-2 w-1.5 sm:w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -98,8 +98,8 @@ const bandB = [
         </div>
       </div>
 
-      <!-- Nodo 3: Derecha Medio (Peak Hour Climax) - Posicionado arriba, completamente fuera del reflejo y del horizonte -->
-      <div class="flex flex-col items-start absolute -right-2 sm:-right-1 top-[48%] sm:top-[50%] z-30 group pointer-events-auto">
+      <!-- Nodo 3: Derecha Medio (Peak Hour Climax) -->
+      <div class="hidden sm:flex flex-col items-start absolute -right-2 sm:-right-1 top-[48%] sm:top-[50%] z-30 group pointer-events-auto">
         <div class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-[#0E0C13]/90 border border-purple-500/50 backdrop-blur-md shadow-[0_0_15px_rgba(192,132,252,0.25)] hover:border-purple-400 transition-colors">
           <span class="relative flex h-1.5 sm:h-2 w-1.5 sm:w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
@@ -119,9 +119,9 @@ const bandB = [
     <!-- COLUMNA COPY (Centrado en móvil, alineado a la izquierda en desktop, sube sobre reflejo en móvil) -->
     <div class="copy">
       
-      <!-- 1. Localización (Formato compacto y fino) -->
-      <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-black/60 border border-purple-500/30 backdrop-blur-md text-[8.5px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-gray-300 font-medium shadow-[0_0_12px_rgba(139,92,246,0.2)] mb-0.5 sm:mb-1">
-        <span class="w-1 h-1 rounded-full bg-purple-400 animate-pulse shadow-[0_0_4px_#c084fc]"></span>
+      <!-- 1. Localización (Formato compacto y visible) -->
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/70 border border-purple-500/40 backdrop-blur-md text-[10.5px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.24em] text-white font-semibold shadow-[0_0_12px_rgba(139,92,246,0.3)] mb-0.5 sm:mb-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse shadow-[0_0_4px_#c084fc]"></span>
         Fuerteventura &bull; Canary Islands
       </div>
 
@@ -130,14 +130,28 @@ const bandB = [
         El arte de crear la <em>atmósfera</em> perfecta.
       </h1>
 
-      <!-- Subtítulo técnico proporcionado y menor que el H1, con margen coherente -->
-      <p class="text-[9.5px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.26em] text-purple-300/85 font-medium max-w-lg mt-2 sm:mt-3 mb-1 sm:mb-2">
+      <!-- Subtítulo técnico contextual legible y claro -->
+      <p class="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.22em] text-purple-200 font-bold max-w-lg mt-2 sm:mt-3 mb-1 sm:mb-2">
         DJ para Hoteles, Bodas y Eventos Privados
       </p>
 
       <!-- Telemetría de Trayectoria y Formatos en cápsula redondeada -->
-      <div class="inline-flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-3 py-1.5 px-3.5 sm:px-5 rounded-full bg-black/60 border border-purple-500/30 backdrop-blur-md text-[10px] sm:text-sm font-mono text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-1 sm:mb-2">
+      <div class="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 py-1.5 px-4 sm:px-5 rounded-full bg-black/70 border border-purple-500/40 backdrop-blur-md text-xs sm:text-sm font-mono text-white shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-1 sm:mb-2">
         <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">+15</strong>
+          <span>Años de trayectoria</span>
+        </span>
+        <span class="text-purple-500/60 font-sans">|</span>
+        <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">6</strong>
+          <span>Formatos Escénicos</span>
+        </span>
+        <span class="text-purple-500/60 font-sans">|</span>
+        <span class="inline-flex items-center gap-1.5">
+          <strong class="text-purple-400 font-bold tracking-tight">PRO</strong>
+          <span>Rider Técnico Pro</span>
+        </span>
+      </div>
           <strong class="text-purple-400 font-bold tracking-tight">+15</strong>
           <span>Años de trayectoria</span>
         </span>
@@ -294,18 +308,18 @@ const bandB = [
     font-style: italic;
     font-weight: 500;
     font-optical-sizing: auto;
-    font-size: clamp(2.35rem, 8.8vw, 3.8rem);
-    line-height: 0.96;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.65rem, 9.6vw, 4.4rem);
+    line-height: 0.94;
+    letter-spacing: -0.03em;
     text-wrap: balance;
     text-align: center;
-    padding-inline: 0.15rem;
+    padding-inline: 0;
   }
   @media (min-width: 960px) {
     .slogan {
       text-align: left;
-      font-size: clamp(3.4rem, 5.6vw, 5.8rem);
-      line-height: 0.98;
+      font-size: clamp(3.6rem, 6.2vw, 6.4rem);
+      line-height: 0.96;
       padding-inline: 0;
     }
   }
