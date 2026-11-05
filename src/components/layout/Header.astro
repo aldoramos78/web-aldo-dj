@@ -3,7 +3,7 @@
 <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0D0D11]/85 backdrop-blur-md border-b border-white/5">
   <div class="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-20 flex items-center justify-between">
     <!-- Brand Logo -->
-    <a href="/#hero" class="flex items-center gap-2 group z-10">
+    <a href="/" class="flex items-center gap-2 group z-10">
       <img 
         src="/imagenes/Logo.DJ.Blanco.png" 
         alt="Aldo Deejay Logo" 
@@ -15,7 +15,7 @@
 
     <!-- Desktop Navigation: Centrado matemáticamente respecto al 100% del ancho de la página -->
     <nav class="hidden md:flex items-center gap-5 lg:gap-7 absolute left-1/2 -translate-x-1/2 z-10">
-      <a href="/#hero" class="nav-link">Inicio</a>
+      <a href="/" class="nav-link">Inicio</a>
       <a href="/#about" class="nav-link">Sobre Mí</a>
       <a href="/#sets" class="nav-link">Sets & Galería</a>
       <a href="/#showcase" class="nav-link">Showcase</a>
@@ -49,7 +49,7 @@
 
   <!-- Mobile Drawer Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-[#0D0D11]/95 backdrop-blur-xl border-b border-purple-500/20 px-6 py-6 space-y-4">
-    <a href="/#hero" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Inicio</a>
+    <a href="/" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Inicio</a>
     <a href="/#about" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Sobre Mí</a>
     <a href="/#sets" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Sets & Galería</a>
     <a href="/#showcase" class="mobile-link block text-base uppercase tracking-wider text-gray-200 hover:text-purple-400">Showcase</a>
@@ -129,6 +129,20 @@
       hamburgerIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
       menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll suave al inicio si ya estamos en la home, manteniendo la URL limpia sin #hero
+  const homeLinks = document.querySelectorAll('a[href="/"]');
+  homeLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.location.hash) {
+          history.pushState(null, '', '/');
+        }
+      }
     });
   });
 </script>

@@ -130,7 +130,8 @@ const formats = [
 <style>
   .coverflow-item {
     width: 250px;
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease, filter 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+    will-change: transform, opacity;
   }
   @media (min-width: 640px) {
     .coverflow-item {

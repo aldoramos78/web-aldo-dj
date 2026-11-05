@@ -350,6 +350,8 @@ const bandB = [
     translate: -50% -50%;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(167, 139, 250, 0.28) 38%, transparent 68%);
+    will-change: transform, opacity;
+    transform: translateZ(0);
     animation: beat var(--beat) ease-out infinite;
   }
   .stage__rings span {
@@ -362,6 +364,8 @@ const bandB = [
     border: 1px solid var(--line);
     translate: -50% -50%;
     opacity: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
     animation: ring calc(var(--beat) * 8) linear infinite;
   }
   .stage__rings span:nth-child(2) { animation-delay: calc(var(--beat) * -2); }
@@ -391,6 +395,7 @@ const bandB = [
     width: 100%;
     transform: scaleY(-1);
     background: linear-gradient(0deg, var(--violet), var(--lila));
+    will-change: transform;
     animation: ripple calc(var(--beat) * 4) ease-in-out infinite;
   }
 
@@ -429,9 +434,16 @@ const bandB = [
   .band__track {
     display: flex;
     width: max-content;
+    will-change: transform;
+    transform: translateZ(0);
     animation: marquee calc(var(--beat) * 32) linear infinite;
   }
-  .band__track--rev { animation-direction: reverse; animation-duration: calc(var(--beat) * 48); }
+  .band__track--rev { 
+    animation-direction: reverse; 
+    animation-duration: calc(var(--beat) * 48); 
+    will-change: transform;
+    transform: translateZ(0);
+  }
   .band__item {
     display: inline-flex;
     align-items: center;
