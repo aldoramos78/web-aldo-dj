@@ -90,6 +90,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
   transition: all 0.3s ease;
 }
@@ -111,6 +112,7 @@ body {
   padding: 0.85rem 1.8rem;
   border-radius: 9999px;
   font-weight: 600;
+  white-space: nowrap;
   transition: all 0.3s ease;
 }
 
