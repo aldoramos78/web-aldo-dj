@@ -28,7 +28,9 @@ const formats = [
     title: "Deep Blue Sea",
     format: "club",
     desc: "Acordes de violín eléctrico flotando sobre bases Deep & House. Un toque elegante para terrazas y eventos al atardecer.",
-    image: "/imagenes/Deep.Blue.Sea.webp"
+    image: "/imagenes/Deep.Blue.Sea.webp",
+    listenLink: "https://soundcloud.com/aldo_deejay/deep-blue-sea",
+    soundCloudEmbed: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/aldo_deejay/deep-blue-sea&color=%238b5cf6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
     title: "Octopus Party",
@@ -81,6 +83,8 @@ const formats = [
               data-title={item.title}
               data-format={item.format}
               data-desc={item.desc}
+              data-listen={item.listenLink || ''}
+              data-embed={item.soundCloudEmbed || ''}
             >
               <img 
                 src={item.image} 
@@ -112,13 +116,31 @@ const formats = [
         <p id="showcase-desc" class="text-base sm:text-lg text-white font-normal mt-2 min-h-[48px] leading-relaxed">
           {formats[0].desc}
         </p>
-        <div class="mt-4 flex items-center justify-center gap-3">
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
           <a 
             id="showcase-cta"
             href="#contact" 
             class="btn-primary text-xs sm:text-sm !py-2.5 !px-6"
           >
             RESERVAR ESTE FORMATO
+          </a>
+          <button
+            type="button"
+            id="showcase-listen-btn"
+            class="hidden btn-secondary text-xs sm:text-sm !py-2.5 !px-5 items-center gap-2"
+          >
+            <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span>ESCUCHAR SESIÓN</span>
+          </button>
+        </div>
+
+        <!-- Reproductor SoundCloud desplegable bajo demanda -->
+        <div id="showcase-player-wrap" class="hidden mt-4 pt-3 border-t border-white/10">
+          <div class="rounded-xl overflow-hidden border border-purple-500/40 bg-[#0B0B10]">
+            <iframe id="showcase-sc-iframe" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="" loading="lazy"></iframe>
+          </div>
+          <a id="showcase-sc-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-purple-300 hover:text-white underline transition-colors">
+            Abrir en SoundCloud &rarr;
           </a>
         </div>
       </div>
@@ -229,6 +251,13 @@ const formats = [
   const titleEl = document.getElementById('showcase-title');
   const descEl = document.getElementById('showcase-desc');
   const stage = document.getElementById('coverflow-stage');
+  const listenBtn = document.getElementById('showcase-listen-btn');
+  const playerWrap = document.getElementById('showcase-player-wrap');
+  const scIframe = document.getElementById('showcase-sc-iframe') as HTMLIFrameElement | null;
+  const scLink = document.getElementById('showcase-sc-link') as HTMLAnchorElement | null;
+
+  let currentEmbed = '';
+  let currentListenLink = '';
 
   function updateCoverflow() {
     const total = items.length;
@@ -244,6 +273,25 @@ const formats = [
         item.classList.add('active');
         if (titleEl) titleEl.textContent = item.dataset.title || '';
         if (descEl) descEl.textContent = item.dataset.desc || '';
+
+        const embed = item.dataset.embed || '';
+        const listen = item.dataset.listen || '';
+
+        if (embed && listenBtn) {
+          currentEmbed = embed;
+          currentListenLink = listen;
+          listenBtn.classList.remove('hidden');
+          listenBtn.classList.add('inline-flex');
+        } else if (listenBtn) {
+          currentEmbed = '';
+          currentListenLink = '';
+          listenBtn.classList.add('hidden');
+          listenBtn.classList.remove('inline-flex');
+        }
+
+        // Ocultar reproductor al cambiar de formato para no reproducir en segundo plano
+        if (playerWrap) playerWrap.classList.add('hidden');
+        if (scIframe && scIframe.src !== '') scIframe.src = '';
       } else if (offset === -1) {
         item.classList.add('prev-1');
       } else if (offset === 1) {
@@ -257,6 +305,19 @@ const formats = [
       }
     });
   }
+
+  listenBtn?.addEventListener('click', () => {
+    if (!playerWrap || !scIframe || !scLink || !currentEmbed) return;
+    const isHidden = playerWrap.classList.contains('hidden');
+    if (isHidden) {
+      scIframe.src = currentEmbed;
+      scLink.href = currentListenLink;
+      playerWrap.classList.remove('hidden');
+    } else {
+      playerWrap.classList.add('hidden');
+      scIframe.src = '';
+    }
+  });
 
   function goNext() {
     currentIndex = (currentIndex + 1) % items.length;
