@@ -4,7 +4,8 @@ export interface ShowcaseFormat {
   eyebrow: string;
   format: string;
   shortDesc: string;
-  longDesc: string;
+  longDesc: string[];
+  highlights: string[];
   image: string;
   idealFor: string[];
   listenLink?: string;
@@ -19,11 +20,19 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "01 / FIESTA & CLUBBING",
     format: "club",
     shortDesc:
-      "La mejor selección de rompepistas internacionales y los temazos de siempre. Energía y ritmo para mantener la pista llena tanto en hoteles (21–23h) como en discoteca.",
-    longDesc:
-      "Sesión dinámica pensada para hacer bailar a todo tipo de público. Combina los grandes éxitos comerciales actuales con himnos internacionales de siempre, remixes exclusivos y transiciones rápidas. Funciona igual de bien animando el horario estelar nocturno en hoteles y resorts (21:00 a 23:00) que en salas de fiesta y discotecas hasta el cierre.",
+      "La mejor selección de rompepistas internacionales y temazos de siempre para mantener la pista llena de principio a fin.",
+    longDesc: [
+      "Un formato diseñado para conectar con públicos variados y transformar cualquier recinto en una auténtica pista de baile desde el primer minuto. La clave está en la lectura constante de la sala y en saber unir generaciones a través de éxitos reconocibles.",
+      "El repertorio combina los grandes hits internacionales actuales con clásicos infalibles del pop-dance, música urbana elegante, latin house y remixes exclusivos pensados para mantener la energía arriba sin altibajos.",
+      "Funciona con total solvencia tanto en la programación nocturna de hoteles y resorts como en salas de fiesta, eventos privados de alto nivel o clubes."
+    ],
+    highlights: [
+      "Lectura dinámica de pista y mezcla fluida sin cortes",
+      "Repertorio internacional adaptable a público nacional y turístico",
+      "Opción de sonido e iluminación profesional acorde al espacio"
+    ],
     image: "/imagenes/Dj.Hits.webp",
-    idealFor: ["Hoteles (21:00 – 23:00)", "Discotecas y Clubes", "Fiestas Privadas"]
+    idealFor: ["Hoteles & Resorts", "Discotecas y Clubes", "Fiestas Privadas"]
   },
   {
     slug: "dancefever",
@@ -31,11 +40,19 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "02 / DISCO-DANCE + VOZ EN VIVO",
     format: "club",
     shortDesc:
-      "Voz en vivo y energía con los temas Disco-Dance imprescindibles. Ritmo, interacción y buen ambiente para una noche divertida.",
-    longDesc:
-      "Un formato vibrante que une cabina DJ profesional con voz en directo interpretando los clásicos imprescindibles de la era Disco, Funk y Dance. Interacción constante con el público, estética festiva y un repertorio infalible para levantar cualquier gala, fiesta temática o noche de hotel.",
+      "Voz en vivo y pura energía con los grandes clásicos Disco-Dance. Ritmo, carisma e interacción para una noche inolvidable.",
+    longDesc: [
+      "Dance Fever rescata la alegría y el magnetismo de la música Disco, Funk y Dance de todos los tiempos, elevándolos mediante la fuerza de una voz femenina en directo sincronizada con la cabina.",
+      "Más allá de una sesión convencional, es una experiencia cercana y participativa donde el escenario cobra vida. La conexión vocal con los asistentes convierte las cenas de gala, fiestas temáticas o noches en hoteles en celebraciones memorables.",
+      "Un espectáculo luminoso, bailable y elegante pensado para arrancar sonrisas y llenar la pista con himnos que todo el mundo conoce y canta."
+    ],
+    highlights: [
+      "Cabina DJ profesional acompañada de cantante en directo",
+      "Clásicos Disco, Funk y Dance con sonido actualizado",
+      "Interacción constante con el público y puesta en escena dinámica"
+    ],
     image: "/imagenes/Dance.Fever.webp",
-    idealFor: ["Hoteles & Resorts", "Galas Corporativas", "Noches Temáticas"]
+    idealFor: ["Hoteles & Resorts", "Galas y Cenas de Empresa", "Noches Temáticas"]
   },
   {
     slug: "loungesessions",
@@ -43,11 +60,19 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "03 / CHILL, ORGANIC & TERRACE",
     format: "hotel",
     shortDesc:
-      "Sonidos lounge, organic house y beats relajados. La música idónea para comidas al mediodía, terrazas en la playa, beach clubs y hoteles.",
-    longDesc:
-      "Ambientación sonora elegante y cuidada al detalle sin estridencias ni volúmenes invasivos. Texturas orgánicas, afro-deep suave y melodías cálidas diseñadas para acompañar comidas al mediodía, sobremesas frente al mar, tardes en beach clubs, cócteles de boda o zonas chill-out de hoteles.",
+      "Sonidos lounge, organic house y beats relajados. La banda sonora idónea para terrazas, beach clubs, restaurantes y hoteles.",
+    longDesc: [
+      "Música cuidada para vestir el espacio con elegancia y naturalidad. Lounge Sessions está pensado para crear una atmósfera agradable donde los invitados puedan conversar, disfrutar de la gastronomía o tomar una copa sin sentirse invadidos por el volumen.",
+      "La selección transita por texturas orgánicas, afro-deep suave, bossa electrónica y matices acústicos que aportan frescura y personalidad propia a terrazas frente al mar, beach clubs, zonas de piscina o restaurantes con encanto.",
+      "Un acompañamiento sonoro versátil que realza la identidad del local y mantiene un pulso envolvente en cualquier momento de la jornada."
+    ],
+    highlights: [
+      "Ambientación elegante que respeta la conversación del cliente",
+      "Selección orgánica, deep melódico y matices mediterráneos",
+      "Adaptable a espacios abiertos, restaurantes y zonas chill-out"
+    ],
     image: "/imagenes/Dj.Chill.webp",
-    idealFor: ["Comidas al Mediodía", "Terrazas & Restaurantes", "Beach Clubs & Hoteles"]
+    idealFor: ["Restaurantes & Terrazas", "Beach Clubs", "Hoteles & Cócteles"]
   },
   {
     slug: "flamencogrooves",
@@ -55,9 +80,17 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "04 / ELECTROFLAMENCO & BAILARINA",
     format: "private",
     shortDesc:
-      "Ritmos ElectroFlamencos entrelazados con el arte, la elegancia y el zapateado de una bailarina flamenca.",
-    longDesc:
-      "Fusión escénica de alto impacto visual y sonoro donde la electrónica moderna, el house melódico y la percusión latina dialogan en vivo con la fuerza, los giros y el taconeo de una bailarina flamenca profesional. Un espectáculo con sello propio para sorprender a público nacional e internacional.",
+      "Ritmos ElectroFlamencos entrelazados con el arte, la fuerza y la elegancia del baile flamenco en directo.",
+    longDesc: [
+      "Un encuentro escénico sorprendente entre la raíz española y la electrónica contemporánea. Flamenco Grooves une bases melódicas, house percusivo y guitarra flamenca con el taconeo y la presencia visual de una bailarina profesional sobre el escenario.",
+      "Cada intervención está coreografiada para crear momentos de auténtica tensión artística y belleza visual, capturando al instante la atención tanto del público local como del visitante internacional que busca algo genuino y sofisticado.",
+      "Ideal para dar un toque distintivo a bodas de destino, recepciones VIP y eventos donde el factor sorpresa marca la diferencia."
+    ],
+    highlights: [
+      "Fusión de electrónica actual con baile flamenco en vivo",
+      "Fuerte impacto visual para eventos corporativos y hoteles boutique",
+      "Formato modular adaptable a cóctel o momento estelar de fiesta"
+    ],
     image: "/imagenes/Flamenco.Grooves.webp",
     idealFor: ["Eventos VIP", "Hoteles Boutique", "Bodas de Destino"]
   },
@@ -67,9 +100,17 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "05 / VIOLÍN ELÉCTRICO & DEEP HOUSE",
     format: "club",
     shortDesc:
-      "Acordes de violín eléctrico flotando sobre bases Deep & House. Un toque elegante para terrazas, beach clubs y eventos especiales.",
-    longDesc:
-      "Una experiencia musical sofisticada y emotiva. El violín eléctrico en directo aporta brillo melódico y elegancia sobre una base rítmica Deep, Afro y Melodic House perfectamente medida para terrazas frente al Atlántico, recepciones exclusivas y eventos con gusto por el detalle.",
+      "Acordes de violín eléctrico flotando sobre bases Deep & House. Elegancia sonora para terrazas, beach clubs y eventos exclusivos.",
+    longDesc: [
+      "Deep Blue Sea nace para aportar distinción y sensibilidad musical a través de la unión entre el DJ set y el violín eléctrico interpretado en directo.",
+      "Las líneas melódicas del violín envuelven la base electrónica con matices cálidos y emotivos, construyendo un paisaje sonoro refinado que encaja a la perfección en terrazas con vistas al océano, recepciones nupciales y eventos corporativos selectos.",
+      "Un formato pensado para quienes buscan diferenciar su evento con música en vivo de estética moderna y acabado impecable."
+    ],
+    highlights: [
+      "Violinista eléctrico en directo sincronizado con sesión Deep & Afro House",
+      "Estética sonora sofisticada y emotiva",
+      "Ideal para eventos frente al mar, recepciones y celebraciones exclusivas"
+    ],
     image: "/imagenes/Deep.Blue.Sea.webp",
     idealFor: ["Terrazas & Beach Clubs", "Cócteles y Recepciones", "Eventos Premium"],
     listenLink: "https://soundcloud.com/aldo_deejay/deep-blue-sea",
@@ -82,9 +123,17 @@ export const SHOWCASE_FORMATS: ShowcaseFormat[] = [
     eyebrow: "06 / GRAN PRODUCCIÓN VISUAL",
     format: "club",
     shortDesc:
-      "Una llamativa cabina hinchable de 8×3m, performance en directo, candy girls y animación temática para un show visual diferente.",
-    longDesc:
-      "Nuestra producción escénica más espectacular y reconocible. Incluye una impresionante cabina hinchable gigante en forma de pulpo de 8×3 metros que transforma por completo el recinto, acompañada de equipo de performance, candy girls y animación temática diseñada para festivales, grandes fiestas de hotel y eventos de verano.",
+      "Espectacular cabina hinchable gigante de 8×3m, performance en directo, candy girls y animación temática para un show inolvidable.",
+    longDesc: [
+      "Nuestra producción visual más impactante y reconocible. Octopus Party convierte el espacio del evento en un escenario temático inmersivo presidido por una monumental cabina hinchable en forma de pulpo de 8 metros de ancho por 3 de alto.",
+      "El espectáculo se completa con equipo de performance, candy girls, vestuario tematizado e interacción constante con el público, generando un reclamo fotográfico y audiovisual irresistible desde el primer vistazo.",
+      "Diseñado para grandes fiestas de verano, noches estrella en resorts, festivales y celebraciones que buscan ofrecer un formato diferente a todo lo habitual."
+    ],
+    highlights: [
+      "Cabina hinchable gigante de 8×3 metros de alto impacto visual",
+      "Paquete con performers, candy girls y animación temática",
+      "Sesión festiva de alta energía pensada para grandes aforos"
+    ],
     image: "/imagenes/Dj.Octopus.webp",
     idealFor: ["Macro-Eventos & Festivales", "Noches Estrella de Hotel", "Fiestas Temáticas"]
   }

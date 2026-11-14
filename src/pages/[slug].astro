@@ -30,57 +30,72 @@ const absoluteImage = `https://www.aldodeejay.com${item.image}`;
     <!-- Glow morado 3D -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
 
-    <div class="max-w-xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
       <!-- Botón Volver arriba con flecha -->
-      <a href="/#showcase" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-gray-400 hover:text-white transition-colors mb-6 self-start group">
+      <a href="/#showcase" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-gray-400 hover:text-white transition-colors mb-7 self-start group">
         <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
         Volver al Showcase
       </a>
 
-      <!-- Tarjeta vertical 3D morada coherente con /creep -->
-      <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-purple-500/30 shadow-[0_0_60px_rgba(139,92,246,0.35)] text-center relative overflow-hidden w-full flex flex-col items-center">
+      <!-- Tarjeta vertical 3D morada con espaciado generoso -->
+      <div class="glass-panel rounded-3xl p-7 sm:p-12 border border-purple-500/30 shadow-[0_0_60px_rgba(139,92,246,0.35)] text-center relative overflow-hidden w-full flex flex-col items-center">
         
-        <!-- Cartel vertical del espectáculo -->
-        <div class="w-full max-w-[360px] aspect-[4/5] rounded-2xl overflow-hidden border border-purple-500/35 shadow-[0_25px_60px_rgba(0,0,0,0.65),0_0_45px_rgba(139,92,246,0.25)] bg-black">
+        <!-- Cartel completo en formato A4 sin recortes -->
+        <div class="w-full max-w-[330px] sm:max-w-[380px] rounded-2xl overflow-hidden border border-purple-500/35 shadow-[0_25px_60px_rgba(0,0,0,0.65),0_0_45px_rgba(139,92,246,0.25)] bg-black">
           <img
             src={item.image}
             alt={`Cartel oficial ${item.title} - Aldo Deejay`}
-            class="w-full h-full object-cover"
-            width="720"
-            height="900"
+            class="w-full h-auto block"
+            width="700"
+            height="990"
             loading="eager"
             fetchpriority="high"
           />
         </div>
 
-        <!-- Eyebrow & Título -->
-        <p class="mt-7 text-xs tracking-[0.28em] uppercase text-purple-300 font-semibold">
+        <!-- Eyebrow & Título con aire suficiente -->
+        <p class="mt-10 text-xs tracking-[0.28em] uppercase text-purple-300 font-semibold">
           {item.eyebrow}
         </p>
-        <h1 class="mt-2.5 text-4xl sm:text-5xl font-black text-white uppercase tracking-tight leading-none">
+        <h1 class="mt-3 text-4xl sm:text-5xl font-black text-white uppercase tracking-tight leading-none">
           {item.title}
         </h1>
 
         <!-- Badges Ideal Para -->
-        <div class="mt-5 flex flex-wrap justify-center gap-2">
+        <div class="mt-6 flex flex-wrap justify-center gap-2.5">
           {item.idealFor.map((tag) => (
-            <span class="px-3 py-1 rounded-full bg-purple-900/45 border border-purple-500/30 text-xs font-semibold text-purple-200">
+            <span class="px-3.5 py-1.5 rounded-full bg-purple-900/45 border border-purple-500/30 text-xs font-semibold text-purple-200">
               {tag}
             </span>
           ))}
         </div>
 
-        <!-- Descripción detallada -->
-        <p class="mt-6 text-base sm:text-lg text-white/95 font-normal leading-relaxed">
-          {item.longDesc}
-        </p>
+        <!-- Descripción detallada ampliada en párrafos separados -->
+        <div class="mt-8 space-y-5 text-base sm:text-lg text-white/95 font-normal leading-relaxed max-w-xl">
+          {item.longDesc.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+
+        <!-- Puntos clave del espectáculo -->
+        <div class="mt-9 pt-7 border-t border-white/10 w-full max-w-md text-left space-y-3">
+          <h2 class="text-xs font-bold uppercase tracking-[0.22em] text-purple-300 text-center mb-4">
+            Claves del formato
+          </h2>
+          {item.highlights.map((point) => (
+            <div class="flex items-start gap-3 text-sm sm:text-base text-purple-100/90">
+              <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0 shadow-[0_0_6px_#c084fc]"></span>
+              <span>{point}</span>
+            </div>
+          ))}
+        </div>
 
         <!-- Reproductor SoundCloud si está disponible -->
         {item.soundCloudEmbed && (
-          <div class="w-full mt-7 pt-5 border-t border-purple-500/20">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-purple-300 block mb-3">
+          <div class="w-full max-w-lg mt-9 pt-7 border-t border-purple-500/20">
+            <span class="text-xs font-bold uppercase tracking-[0.22em] text-purple-300 block mb-4">
               Escucha el adelanto en SoundCloud
             </span>
             <div class="rounded-2xl overflow-hidden border border-purple-500/40 bg-[#0B0B10] shadow-xl">
@@ -99,7 +114,7 @@ const absoluteImage = `https://www.aldodeejay.com${item.image}`;
                 href={item.listenLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-block mt-2.5 text-xs text-purple-300 hover:text-white underline transition-colors"
+                class="inline-block mt-3 text-xs text-purple-300 hover:text-white underline transition-colors"
               >
                 Abrir pista en SoundCloud &rarr;
               </a>
@@ -108,14 +123,14 @@ const absoluteImage = `https://www.aldodeejay.com${item.image}`;
         )}
 
         <!-- CTA Principal -->
-        <div class="mt-8 w-full flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div class="mt-10 w-full flex flex-col sm:flex-row items-center justify-center gap-3">
           <a href="/#contact" class="btn-primary w-full sm:w-auto text-xs sm:text-sm !py-3.5 !px-10">
             RESERVAR ESTE FORMATO
           </a>
         </div>
 
-        <p class="mt-6 text-xs text-gray-400">
-          Producción y contratación directa en Fuerteventura y Canarias &bull; VIP CRAB EVENTS, S.L.U.
+        <p class="mt-8 text-xs text-gray-400 tracking-wide">
+          Contratación directa en Fuerteventura y Canarias.
         </p>
 
       </div>
